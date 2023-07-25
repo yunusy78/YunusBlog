@@ -16,6 +16,7 @@ public class BlogController : Controller
     
     public IActionResult Details(Guid id)
     {
+        ViewBag.id = id;
         var result = _blogManager.GetBlogById(id);
         return View(result);
     }

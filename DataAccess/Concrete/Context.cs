@@ -1,9 +1,10 @@
 ﻿using Entity.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete;
 
-public class Context: DbContext
+public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string> 
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
