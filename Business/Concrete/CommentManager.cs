@@ -15,17 +15,17 @@ public class CommentManager: ICommentService
 
     public void Add(Comment comment)
     {
-        throw new NotImplementedException();
+        _commentDal.Add(comment);
     }
 
     public void Update(Comment comment)
     {
-        throw new NotImplementedException();
+        _commentDal.Update(comment);
     }
 
     public void Delete(Comment comment)
     {
-        throw new NotImplementedException();
+        _commentDal.Delete(comment);
     }
 
     public List<Comment> GetAll(Guid id)

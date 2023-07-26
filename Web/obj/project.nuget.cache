@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "pOu1CbUa+OpIPFtzQnQcrNw2VbnyIQaROy9VKCg5kadYAXjtDXI1C/iOfxiJdQChZuALNYBcgucKoBJxGdeIlA==",
+  "dgSpecHash": "yE/s+h3dPCt5wf5sUruA5vP2BVb544V2UzozblkP8qoCrHV3UV5Wb1QLX/xyL3wAdam2ylqeYUR8YQgfI61xFA==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\Web\\Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yunus\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.11\\microsoft.aspnetcore.cryptography.internal.6.0.11.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.11\\microsoft.aspnetcore.cryptography.keyderivation.6.0.11.nupkg.sha512",

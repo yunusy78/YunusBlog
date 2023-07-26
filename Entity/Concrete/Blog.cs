@@ -23,6 +23,11 @@ public class Blog
     [ForeignKey("CategoryId")]
     
     public Category Category { get; set; }
+    
+    public Guid WriterId { get; set; }
+    [ForeignKey("WriterId")]
+    
+    public Writer Writer { get; set; }
 
     public List<Comment> Comments{ get; set; }
 }

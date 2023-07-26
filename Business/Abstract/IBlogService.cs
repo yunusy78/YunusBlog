@@ -11,4 +11,6 @@ public interface IBlogService
     Blog GetById(Guid id);
     
     List<Blog> GetListWithCategory();
+    
+    List<Blog> GetListByWriterId(Guid id);
 }

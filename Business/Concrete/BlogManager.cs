@@ -42,7 +42,12 @@ public class BlogManager: IBlogService
     {
         return _blogDal.GetListWithCategory();
     }
-    
+
+    public List<Blog> GetListByWriterId(Guid id)
+    {
+        return _blogDal.GetListAll(x=>x.WriterId==id);
+    }
+
     public List<Blog> GetBlogById(Guid id)
     {
         return _blogDal.GetListAll(x=>x.Id==id);

@@ -18,5 +18,6 @@ public class Writer
     
     public bool Status { get; set; }
     
+    public List<Blog> Blogs{ get; set; }
     
 }

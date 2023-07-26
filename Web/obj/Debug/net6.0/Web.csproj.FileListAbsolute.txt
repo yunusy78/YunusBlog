@@ -241,3 +241,6 @@ C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\ne
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\net6.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\net6.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Web\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
