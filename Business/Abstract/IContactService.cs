@@ -2,7 +2,7 @@
 
 namespace Business.Abstract;
 
-public interface IContactService
+public interface IContactService:IGenericService<Contact>
 {
-    void Add(Contact contact);
+   
 }

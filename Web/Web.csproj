@@ -39,8 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Pages" />
-      <Folder Include="Pages\" />
+      <Content Include="wwwroot\BlogTema\writer\.DS_Store" />
     </ItemGroup>
 
 </Project>

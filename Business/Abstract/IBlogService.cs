@@ -2,13 +2,8 @@
 
 namespace Business.Abstract;
 
-public interface IBlogService
+public interface IBlogService:IGenericService<Blog>
 {
-    void Add(Blog blog);
-    void Update(Blog blog);
-    void Delete(Blog blog);
-    List<Blog> GetAll();
-    Blog GetById(Guid id);
     
     List<Blog> GetListWithCategory();
     

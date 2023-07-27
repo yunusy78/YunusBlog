@@ -2,13 +2,8 @@
 
 namespace Business.Abstract;
 
-public interface ICommentService
+public interface ICommentService: IGenericService<Comment>
 {
-    void Add(Comment comment);
-    void Update(Comment comment);
-    void Delete(Comment comment);
-    List<Comment> GetAll(Guid id);
-    Comment GetById(Guid id);
-   
-    
+    List<Comment> GetAll2(Guid id);
+
 }

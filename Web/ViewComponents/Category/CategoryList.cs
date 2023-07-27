@@ -10,6 +10,7 @@ public class CategoryList: ViewComponent
     
     public IViewComponentResult Invoke()
     {
+        
         var result = _categoryManager.GetAll();
         return View(result);
     }

@@ -2,12 +2,8 @@
 
 namespace Business.Abstract;
 
-public interface INewsLetterService
+public interface INewsLetterService:IGenericService<Newsletter>
 {
-    void Add(Newsletter newsletter);
-    void Update(Newsletter newsletter);
-    void Delete(Newsletter newsletter);
-    List<Newsletter> GetListAll();
-    Newsletter GetById(Guid id);
+  
     
 }

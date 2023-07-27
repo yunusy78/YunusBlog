@@ -28,7 +28,12 @@ public class CommentManager: ICommentService
         _commentDal.Delete(comment);
     }
 
-    public List<Comment> GetAll(Guid id)
+    public List<Comment> GetAll()
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Comment> GetAll2(Guid id)
     {
         return _commentDal.GetListAll(x=>x.BlogId==id);
     }

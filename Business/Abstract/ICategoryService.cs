@@ -2,11 +2,7 @@
 
 namespace Business.Abstract;
 
-public interface ICategoryService
+public interface ICategoryService : IGenericService<Category>
 {
-    void Add(Category category);
-    void Update(Category category);
-    void Delete(Category category);
-    List<Category> GetAll();
-    Category GetById(Guid id);
+    
 }

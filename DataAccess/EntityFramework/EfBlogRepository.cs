@@ -13,4 +13,10 @@ public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
         using var context = new Context();
         return context.Blogs.Include(x => x.Category).ToList();
     }
+
+    public List<Blog> GetListByWriterId(Guid id)
+    {
+        using var context = new Context();
+        return context.Blogs.Include(x => x.Category).Where(x => x.WriterId == id).ToList();
+    }
 }

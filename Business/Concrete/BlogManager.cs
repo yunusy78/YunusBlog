@@ -52,6 +52,16 @@ public class BlogManager: IBlogService
     {
         return _blogDal.GetListAll(x=>x.Id==id);
     }
+    
+    public List<Blog> GetLastThreeBlog()
+    {
+        return _blogDal.GetListAll().Take(3).ToList();
+    }
+    
+    public List<Blog> GetBlogListWithCategory(Guid id)
+    {
+        return _blogDal.GetListByWriterId(id);
+    }
 
 
 }

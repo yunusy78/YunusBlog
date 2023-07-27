@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers;
@@ -13,13 +14,15 @@ public class CommentController : Controller
     {
         return View();
     }
-
+    
+    
     public PartialViewResult PartialAddComment()
     {
         return PartialView();
 
     }
     
+    [Authorize]
     [HttpPost]
     public IActionResult PartialAddComment(Comment comment)
     {
@@ -34,7 +37,7 @@ public class CommentController : Controller
     
     public PartialViewResult CommentListByBlog(Guid id)
     {
-        var result = _commentManager.GetAll(id);
+        var result = _commentManager.GetAll2(id);
         return PartialView(result);
 
     }

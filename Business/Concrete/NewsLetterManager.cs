@@ -28,6 +28,11 @@ public class NewsLetterManager : INewsLetterService
         _newsLetterDal.Delete(newsletter);
     }
 
+    public List<Newsletter> GetAll()
+    {
+        return _newsLetterDal.GetListAll();
+    }
+
     public List<Newsletter> GetListAll()
     {
         return _newsLetterDal.GetListAll();

@@ -23,15 +23,16 @@ public class WriterManager: IWriterService
         _writerDal.Delete(writer);
     }
 
+    public List<Writer> GetAll()
+    {
+        return _writerDal.GetListAll();
+    }
+
     public void Update(Writer writer)
     {
         _writerDal.Update(writer);
     }
-
-    public List<Writer> GetList()
-    {
-        return _writerDal.GetListAll();
-    }
+    
 
     public Writer GetById(Guid id)
     {
