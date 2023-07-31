@@ -33,7 +33,7 @@ public class CategoryManager:ICategoryService
 
     public List<Category> GetAll()
     {
-        return _categoryDal.GetListAll();
+        return _categoryDal.GetList();
     }
 
     public Category GetById(Guid id)

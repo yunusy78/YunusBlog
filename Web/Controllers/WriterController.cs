@@ -11,10 +11,12 @@ namespace Web.Controllers;
 public class WriterController : Controller
 {
     WriterManager _writerManager = new WriterManager(new EfWriterRepository());
+    
     [Authorize]
     // GET
     public IActionResult Index()
     {
+        
         return View();
     }
     

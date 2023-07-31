@@ -20,4 +20,8 @@ public class Writer
     
     public List<Blog> Blogs{ get; set; }
     
+    public virtual ICollection<Message2> MessageSender { get; set; }
+    public virtual ICollection<Message2> MessageReceiver { get; set; }
+    
+
 }

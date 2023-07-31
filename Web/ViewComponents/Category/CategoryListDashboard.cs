@@ -2,7 +2,7 @@
 using DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Web.ViewComponents.Category;
+namespace BlogWeb.ViewComponents.Category;
 
 public class CategoryListDashboard : ViewComponent
 {

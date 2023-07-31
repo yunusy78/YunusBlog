@@ -16,3 +16,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+th {
+  font-weight: bold;
+  color: #333;
+}
+td {
+  font-weight: normal;
+  color: #666;
+}

@@ -25,7 +25,7 @@ public class WriterManager: IWriterService
 
     public List<Writer> GetAll()
     {
-        return _writerDal.GetListAll();
+        return _writerDal.GetList();
     }
 
     public void Update(Writer writer)

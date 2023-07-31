@@ -1,0 +1,37 @@
+﻿@model Entity.Concrete.Message2
+
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "/Views/Writer/WriterLayout.cshtml";
+}
+<div class="message-details">
+    <div class="message-header">
+        <h3>Message Details</h3>
+    </div>
+    <div class="message-body">
+        <div class="form-group">
+            <label for="messageTitle">Subject:</label>
+            <input type="text" id="messageTitle" class="form-control" value="@Model.Subject" readonly>
+        </div>
+        <div class="form-group">
+            <label for="messageContent">Content:</label>
+            <textarea id="messageContent" class="form-control" rows="10" readonly>@Model.Content</textarea>
+        </div>
+        <div class="form-group">
+            <label for="messageTimeAgo">Received:</label>
+            @{
+                DateTime messageTime = @Model.Date;
+                DateTime currentTime = DateTime.Now;
+                TimeSpan timeDifference = currentTime - messageTime;
+                int hoursAgo = (int)timeDifference.TotalHours;
+                int minutesAgo = (int)timeDifference.TotalMinutes % 60;
+            }
+            <input type="text" id="messageTimeAgo" class="form-control" value="@hoursAgo hours @minutesAgo minutes ago" readonly>
+        </div>
+        <div class="form-group">
+                    <a href="/Message/Inbox" class="btn btn-secondary">Go Back</a>
+                </div>
+    </div>
+</div>
+
+

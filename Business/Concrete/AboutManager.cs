@@ -30,7 +30,7 @@ public class AboutManager : IAboutService
 
     public List<About> GetAll()
     {
-        return _aboutDal.GetListAll();
+        return _aboutDal.GetList();
     }
 
     public About GetById(Guid id)

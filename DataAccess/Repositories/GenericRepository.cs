@@ -25,17 +25,18 @@ public class GenericRepository<T> : IGenericDal<T> where T : class
         _context.SaveChanges();
     }
 
- 
-
-    public List<T> GetListAll()
+    public List<T> GetList()
     {
         return _context.Set<T>().ToList();
     }
+
+    
 
     public T GetById(Guid id)
     {
         return _context.Set<T>().Find(id);
     }
+
     
 
     public List<T> GetListAll(Expression<Func<T, bool>> filter)

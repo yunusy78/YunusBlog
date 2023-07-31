@@ -30,7 +30,7 @@ public class BlogManager: IBlogService
 
     public List<Blog> GetAll()
     {
-        return _blogDal.GetListAll();
+        return _blogDal.GetList();
     }
 
     public Blog GetById(Guid id)
@@ -55,7 +55,7 @@ public class BlogManager: IBlogService
     
     public List<Blog> GetLastThreeBlog()
     {
-        return _blogDal.GetListAll().Take(3).ToList();
+        return _blogDal.GetList().Take(3).ToList();
     }
     
     public List<Blog> GetBlogListWithCategory(Guid id)

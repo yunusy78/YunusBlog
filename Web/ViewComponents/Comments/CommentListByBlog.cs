@@ -2,7 +2,7 @@
 using DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Web.ViewComponents.Comments;
+namespace BlogWeb.ViewComponents.Comments;
 
 public class CommentListByBlog: ViewComponent
 {

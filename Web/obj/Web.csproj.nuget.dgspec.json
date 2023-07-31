@@ -334,6 +334,10 @@
               "target": "Package",
               "version": "[8.0.0-preview.6.23329.4, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "SQLite": {
               "target": "Package",
               "version": "[3.13.0, )"

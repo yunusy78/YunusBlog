@@ -30,7 +30,7 @@ public class NotificationManager : INotificationService
 
     public List<Notification> GetAll()
     {
-        return _notificationDal.GetListAll();
+        return _notificationDal.GetList();
     }
 
     public Notification GetById(Guid id)

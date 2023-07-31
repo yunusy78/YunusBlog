@@ -329,6 +329,70 @@ namespace DataAccess.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("Entity.Concrete.Message", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Receiver")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("Entity.Concrete.Message2", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ReceiverId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SenderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReceiverId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Message2S");
+                });
+
             modelBuilder.Entity("Entity.Concrete.Newsletter", b =>
                 {
                     b.Property<Guid>("Id")
@@ -355,6 +419,10 @@ namespace DataAccess.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -563,6 +631,23 @@ namespace DataAccess.Migrations
                     b.Navigation("Blog");
                 });
 
+            modelBuilder.Entity("Entity.Concrete.Message2", b =>
+                {
+                    b.HasOne("Entity.Concrete.Writer", "ReceiverWriter")
+                        .WithMany("MessageReceiver")
+                        .HasForeignKey("ReceiverId")
+                        .IsRequired();
+
+                    b.HasOne("Entity.Concrete.Writer", "SenderWriter")
+                        .WithMany("MessageSender")
+                        .HasForeignKey("SenderId")
+                        .IsRequired();
+
+                    b.Navigation("ReceiverWriter");
+
+                    b.Navigation("SenderWriter");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Entity.Concrete.ApplicationRole", null)
@@ -627,6 +712,10 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entity.Concrete.Writer", b =>
                 {
                     b.Navigation("Blogs");
+
+                    b.Navigation("MessageReceiver");
+
+                    b.Navigation("MessageSender");
                 });
 #pragma warning restore 612, 618
         }

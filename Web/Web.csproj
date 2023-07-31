@@ -27,6 +27,7 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
         <PackageReference Include="SQLite" Version="3.13.0" />
     </ItemGroup>
 
@@ -36,6 +37,7 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\Default\Partial1.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\NotificationList\Default.cshtml" />
     </ItemGroup>
 
     <ItemGroup>

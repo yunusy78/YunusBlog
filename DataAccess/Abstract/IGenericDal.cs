@@ -7,7 +7,7 @@ public interface IGenericDal<T> where T : class
     void Add(T entity);
     void Update(T entity);
     void Delete(T entity);
-    List<T> GetListAll();
+    List<T> GetList();
     T GetById(Guid id);
     
     List<T> GetListAll(Expression<Func<T, bool>> filter);

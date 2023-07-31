@@ -2,7 +2,7 @@
 using DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Web.ViewComponents.Blog;
+namespace BlogWeb.ViewComponents.Blog;
 
 public class BlogLast3:ViewComponent
 {

@@ -11,6 +11,22 @@ public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string>
         optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Blog;Trusted_Connection=True;");
     }
     
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Message2>()
+            .HasOne(x=>x.SenderWriter)
+            .WithMany(x=>x.MessageSender)
+            .HasForeignKey(x=>x.SenderId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
+        modelBuilder.Entity<Message2>()
+            .HasOne(x=>x.ReceiverWriter)
+            .WithMany(x=>x.MessageReceiver)
+            .HasForeignKey(x=>x.ReceiverId)
+            .OnDelete(DeleteBehavior.ClientSetNull);
+     
+    }
+    
     public DbSet<About> Abouts { get; set; }
     public DbSet<Entity.Concrete.Blog> Blogs { get; set; }
     public DbSet<Category> Categories { get; set; }
@@ -20,5 +36,9 @@ public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string>
     public DbSet<Newsletter> Newsletters { get; set; }
     public DbSet<BlogRating> BlogRatings { get; set; }
     public DbSet<Notification> Notifications { get; set; }
+    public DbSet<Message> Messages { get; set; }
+    public DbSet<Message2> Message2S { get; set; }
+
+    
     
 }

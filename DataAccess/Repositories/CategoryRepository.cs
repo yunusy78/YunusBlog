@@ -34,6 +34,11 @@ public class CategoryRepository : ICategoryDal
         _context.SaveChanges();
     }
 
+    public List<Category> GetList()
+    {
+        throw new NotImplementedException();
+    }
+
     public List<Category> GetListAll()
     {
         throw new NotImplementedException();
@@ -42,6 +47,11 @@ public class CategoryRepository : ICategoryDal
     public Category GetById(Guid id)
     {
         return _context.Categories.Find(id);
+    }
+
+    public List<Category> GetList(Expression<Func<Category, bool>> filter)
+    {
+        throw new NotImplementedException();
     }
 
     public List<Category> GetListAll(Expression<Func<Category, bool>> filter)

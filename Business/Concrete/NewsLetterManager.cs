@@ -30,12 +30,12 @@ public class NewsLetterManager : INewsLetterService
 
     public List<Newsletter> GetAll()
     {
-        return _newsLetterDal.GetListAll();
+        return _newsLetterDal.GetList();
     }
 
     public List<Newsletter> GetListAll()
     {
-        return _newsLetterDal.GetListAll();
+        return _newsLetterDal.GetList();
     }
 
     public Newsletter GetById(Guid id)
