@@ -37,7 +37,11 @@
 				<h5 class="card-title">
 					<a href="/Blog/Details/@item.Id">@item.Title</a>
 				</h5>
-				<p class="card-text mb-3">@item.Content.Substring(0, item.Content.Substring(0,130).LastIndexOf(" "))... </p>
+				@{
+                    string truncatedContent = item.Content.Length > 130 ? item.Content.Substring(0, 130) + "..." : item.Content;
+                }
+                <p class="card-text mb-3">@truncatedContent</p>
+
 				<a href="/Blog/Details/@item.Id" class="btn btn-primary read-m">Read More</a>
 			</div>
 		</div>

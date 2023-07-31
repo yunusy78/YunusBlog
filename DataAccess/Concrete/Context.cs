@@ -18,6 +18,7 @@ public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string>
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Comment> Comments { get; set; }
     public DbSet<Newsletter> Newsletters { get; set; }
+    public DbSet<BlogRating> BlogRatings { get; set; }
+    public DbSet<Notification> Notifications { get; set; }
     
-
 }

@@ -11,6 +11,8 @@ namespace Web.Controllers;
 public class BlogController : Controller
 {
     BlogManager _blogManager = new BlogManager(new EfBlogRepository());
+    CategoryManager _categoryManager = new CategoryManager(new EfCategoryRepository());
+    
     // GET
     public IActionResult Index()
     {
@@ -35,48 +37,139 @@ public class BlogController : Controller
     
     public IActionResult AddToBlog()
     {
-        CategoryManager _categoryManager = new CategoryManager(new EfCategoryRepository());
+        
         var categories = _categoryManager.GetAll();
-        ViewBag.Categories = categories;
-        /*List<SelectListItem> valueStatus = (from x in categories
+        List<SelectListItem> valueStatus = (from x in categories
             select new SelectListItem
             {
                 Text = x.Name,
                 Value = x.CategoryId.ToString()
-            }).ToList();*/
-
-
+            }).ToList();
+        ViewBag.Categories2 = valueStatus;
+        
         return View();
     }
     
     
     [HttpPost]
-    public IActionResult AddToBlog(Blog blog)
+    public IActionResult AddToBlog(Blog blog, IFormFile? file)
     
     {
+        // Code to get the list of categories and populate the ViewBag
+        var categories = _categoryManager.GetAll();
+        List<SelectListItem> valueStatus = (from x in categories
+            select new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.CategoryId.ToString()
+            }).ToList();
+        ViewBag.Categories2 = valueStatus;
         
-        blog.CreatedAt = DateTime.Now;
-        blog.Status = true;
-        blog.ImageUrl = "deneme.jpg";
-        blog.WriterId = Guid.Parse("fbaf0787-8b6a-4e59-cc1a-08db8de02bfc");
         BlogValidator validator = new BlogValidator();
-       ValidationResult result = validator.Validate(blog);
-        if (!result.IsValid)
+        ValidationResult result = validator.Validate(blog);
+        
+        if (result.IsValid)
+        {
+            if (file != null)
+            {
+                var extension = Path.GetExtension(file.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/" + newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                file.CopyToAsync(stream);
+                blog.ImageUrl =@"/ImageFile/"+ newImageName;
+            }
+            else
+            {
+                blog.ImageUrl = "default.png";
+            }
+            blog.WriterId = Guid.Parse("fbaf0787-8b6a-4e59-cc1a-08db8de02bfc");
+            blog.CreatedAt = DateTime.Now;
+            blog.Status = true;
+            _blogManager.Add(blog);
+            return RedirectToAction("Index", "Blog");
+        }
+        else
         {
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
             }
-            return View();
+        }
+
+        return View();
+        
+        
+    }
+    
+    public IActionResult DeleteBlog(Guid id)
+    {
+        var result = _blogManager.GetById(id);
+        _blogManager.Delete(result);
+        return RedirectToAction("BlogListByWriter", "Blog");
+    }
+    
+    public IActionResult UpdateBlog(Guid id)
+    {
+        
+        var categories = _categoryManager.GetAll();
+        var result = _blogManager.GetById(id);
+        List<SelectListItem> valueStatus = (from x in categories
+            select new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.CategoryId.ToString()
+            }).ToList();
+        ViewBag.Categories = valueStatus;
+        return View(result);
+    }
+    
+    [HttpPost]
+    public IActionResult UpdateBlog(Blog blog , IFormFile? file)
+    {
+        // Code to get the list of categories and populate the ViewBag
+        var categories = _categoryManager.GetAll();
+        List<SelectListItem> valueStatus = (from x in categories
+            select new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.CategoryId.ToString()
+            }).ToList();
+        ViewBag.Categories = valueStatus;
+        
+        BlogValidator validator = new BlogValidator();
+        ValidationResult result = validator.Validate(blog);
+        
+        if (result.IsValid)
+        {
+            if (file != null)
+            {
+                var extension = Path.GetExtension(file.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/" + newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                file.CopyToAsync(stream);
+                blog.ImageUrl =@"/ImageFile/"+ newImageName;
+            }
+            else
+            {
+                blog.ImageUrl = blog.ImageUrl;
+            }
+            
+            blog.WriterId = Guid.Parse("fbaf0787-8b6a-4e59-cc1a-08db8de02bfc");
+            blog.CreatedAt = DateTime.Now;
+            _blogManager.Update(blog);
+            return RedirectToAction("Index", "Blog");
         }
         else
         {
-            
-            
-            _blogManager.Add(blog);
-            return RedirectToAction("BlogListByWriter", "Blog");
-            
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            }
         }
+
+        return View();
         
     }
   

@@ -174,7 +174,8 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -192,7 +193,8 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<Guid>("WriterId")
                         .HasColumnType("uniqueidentifier");
@@ -204,6 +206,28 @@ namespace DataAccess.Migrations
                     b.HasIndex("WriterId");
 
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("Entity.Concrete.BlogRating", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BlogId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("TotalRating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalRatingCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("BlogRatings");
                 });
 
             modelBuilder.Entity("Entity.Concrete.Category", b =>
@@ -243,6 +267,9 @@ namespace DataAccess.Migrations
 
                     b.Property<Guid>("BlogId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("BlogRating")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -321,6 +348,35 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Newsletters");
+                });
+
+            modelBuilder.Entity("Entity.Concrete.Notification", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Entity.Concrete.Writer", b =>
@@ -483,6 +539,17 @@ namespace DataAccess.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Writer");
+                });
+
+            modelBuilder.Entity("Entity.Concrete.BlogRating", b =>
+                {
+                    b.HasOne("Entity.Concrete.Blog", "Blog")
+                        .WithMany()
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
                 });
 
             modelBuilder.Entity("Entity.Concrete.Comment", b =>

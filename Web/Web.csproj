@@ -42,4 +42,9 @@
       <Content Include="wwwroot\BlogTema\writer\.DS_Store" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Pages" />
+      <Folder Include="wwwroot\ImageFile" />
+    </ItemGroup>
+
 </Project>

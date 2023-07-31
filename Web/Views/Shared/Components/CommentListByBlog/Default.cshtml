@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<Entity.Concrete.Comment>
+
 <div class="comment-top">
     <h4>Comments</h4>
-     @foreach (var item in Model)
-     {
-         <div class="media">
-             <img src="~/BlogTema/images/t1.jpg" alt="" class="img-fluid"/>
-             <div class="media-body">
-                 <h5 class="mt-0">@item.UserName</h5>
-                 <p>@item.Content</p>
-             </div>
-         </div>
-     }
+    @if (!Model.Any())
+    {
+        <p>Be the first one to comment!</p>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <div class="media">
+                <img src="~/BlogTema/images/t1.jpg" alt="" class="img-fluid" />
+                <div class="media-body">
+                    <h5 class="mt-0">@item.UserName</h5>
+                    <p>@item.Content</p>
+                </div>
+            </div>
+        }
+    }
 </div>

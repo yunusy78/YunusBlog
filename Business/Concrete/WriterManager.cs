@@ -38,4 +38,9 @@ public class WriterManager: IWriterService
     {
         return _writerDal.GetById(id);
     }
+
+    public List<Writer> GetWriterById(Guid id)
+    {
+        return _writerDal.GetListAll(x => x.Id == id);
+    }
 }

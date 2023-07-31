@@ -16,6 +16,8 @@ public class Comment
     
     public bool Status { get; set; }
     
+    public int BlogRating { get; set; }
+    
     public Guid BlogId { get; set; }
     [ForeignKey("BlogId")]
     
