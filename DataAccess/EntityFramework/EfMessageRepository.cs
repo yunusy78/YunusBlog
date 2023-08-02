@@ -8,9 +8,15 @@ namespace DataAccess.EntityFramework;
 
 public class EfMessageRepository : GenericRepository<Message2>, IMessageDal
 {
+    private Context _context;
+
+    public EfMessageRepository(Context context) : base(context)
+    {
+        _context = context;
+    }
+
     public List<Message2> GetMessageListWithByWriter(Guid id)
     {
-        using var context = new Context();
-        return context.Message2S.Include(x => x.SenderWriter).Where(x=>x.ReceiverId==id).ToList();
+        return _context.Message2S.Include(x => x.SenderWriter).Where(x=>x.ReceiverId==id).ToList();
     }
 }

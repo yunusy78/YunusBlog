@@ -35,6 +35,6 @@ public class AboutManager : IAboutService
 
     public About GetById(Guid id)
     {
-        throw new NotImplementedException();
+        return _aboutDal.GetById(id);
     }
 }

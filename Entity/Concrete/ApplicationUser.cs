@@ -19,5 +19,9 @@ public class ApplicationUser : IdentityUser
 
    
     public string? District { get; set; }
+    
+    public string? Address { get; set; }
+    
+    public List<Writer> Writers { get; set; }
 
 }

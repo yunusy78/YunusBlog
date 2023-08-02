@@ -1,0 +1,32 @@
+﻿@using Entity.Concrete;
+@model System.Collections.Generic.List<Category>
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h2>Category</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id </th>
+        <th>Name</th>
+        <th>Destription</th>
+        <th>ImageUrl</th>
+        <th>CreatedAt</th>
+        <th>Details</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    { 
+        <tr>
+        <td>@item.CategoryId </td>
+        <td>@item.Name </td>
+        <td>@item.Description </td>
+        <td>@item.ImageUrl </td>
+            <td>@item.CreatedAt </td>
+            <td><a href="#" class= "btn btn-warning">Details</a> </td>
+            <td><a href="#" class="btn btn-danger">Delete</a> </td>
+    </tr>
+    }
+</table>>

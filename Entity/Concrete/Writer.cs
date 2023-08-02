@@ -18,6 +18,10 @@ public class Writer
     
     public bool Status { get; set; }
     
+    public  string ApplicationUserId { get; set; }=string.Empty;
+    
+    public virtual ApplicationUser ApplicationUser { get; set; }
+    
     public List<Blog> Blogs{ get; set; }
     
     public virtual ICollection<Message2> MessageSender { get; set; }

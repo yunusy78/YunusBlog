@@ -8,15 +8,23 @@ namespace DataAccess.EntityFramework;
 
 public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
 {
+    private Context _context;
+
+
+    public EfBlogRepository(Context context) : base(context)
+    {
+        _context = context;
+    }
+
     public List<Blog> GetListWithCategory()
     {
-        using var context = new Context();
-        return context.Blogs.Include(x => x.Category).ToList();
+        
+        return _context.Blogs.Include(x => x.Category).ToList();
     }
 
     public List<Blog> GetListByWriterId(Guid id)
     {
-        using var context = new Context();
-        return context.Blogs.Include(x => x.Category).Where(x => x.WriterId == id).ToList();
+        
+        return _context.Blogs.Include(x => x.Category).Where(x => x.WriterId == id).ToList();
     }
 }

@@ -7,8 +7,14 @@ namespace DataAccess.Repositories;
 
 public class CategoryRepository : ICategoryDal
 {
-    Context _context = new Context();
-    
+    private Context _context;
+
+
+    public CategoryRepository(Context context)
+    {
+        _context = context;
+    }
+
     public List<Category> GetAll()
     {
         return _context.Categories.ToList();

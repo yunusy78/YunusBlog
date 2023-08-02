@@ -1,0 +1,66 @@
+﻿<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+				<h3>About US</h3>
+				<p>Organization B Welcome to Organization B, where creativity meets excellence. Our story began with a group of enthusiasts who shared a common dream of empowering individuals through education and skills development. Driven by a mission to bridge the gap between education and employability, we have been on a relentless pursuit of creating platforms that empower learners to unleash their full potential. Our diverse range of programs and courses cater to learners from all walks of life. ..</p>
+				<div class="read">
+					<a href="/About/Index/" class="btn btn-primary read-m">Read More</a>
+				</div>
+			</div>
+			<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+				@await Component.InvokeAsync("BlogLast3")
+			</div>
+			<!-- subscribe -->
+			<div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
+				<h2>Signup to our newsletter</h2>
+				@await Html.PartialAsync("~/Views/NewsLetter/SubscribeEmail.cshtml")
+				<!-- //subscribe -->
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="footer-cpy text-center">
+			<div class="footer-social">
+				<div class="copyrighttop">
+					<ul>
+						<li class="mx-3">
+							<a class="facebook" href="#">
+								<i class="fab fa-facebook-f"></i>
+								<span>Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a class="facebook" href="#">
+								<i class="fab fa-twitter"></i>
+								<span>Twitter</span>
+							</a>
+						</li>
+						<li class="mx-3">
+							<a class="facebook" href="#">
+								<i class="fab fa-google-plus-g"></i>
+								<span>Google+</span>
+							</a>
+						</li>
+						<li>
+							<a class="facebook" href="#">
+								<i class="fab fa-pinterest-p"></i>
+								<span>Pinterest</span>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="w3layouts-agile-copyrightbottom">
+				<p>© @DateTime.Now.Year Asp.NetCore YunusBlog All Rights Reserved | Design by
+					<a href="http://w3layouts.com/">W3layouts</a>
+				</p>
+
+			</div>
+		</div>
+
+		<!-- //footer -->
+
+
+	</div>
+</footer>

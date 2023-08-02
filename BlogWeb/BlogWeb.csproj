@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-BlogWeb-aab3a6be-4bde-401e-9b46-d8590d6f1269</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.9">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0-preview.6.23329.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Views\About\Index.cshtml" />
+    <AdditionalFiles Include="Views\About\SosialMediaAbout.cshtml" />
+    <AdditionalFiles Include="Views\Blog\AddToBlog.cshtml" />
+    <AdditionalFiles Include="Views\Blog\BlogListByWriter.cshtml" />
+    <AdditionalFiles Include="Views\Blog\Details.cshtml" />
+    <AdditionalFiles Include="Views\Blog\Index.cshtml" />
+    <AdditionalFiles Include="Views\Blog\UpdateBlog.cshtml" />
+    <AdditionalFiles Include="Views\Category\Index.cshtml" />
+    <AdditionalFiles Include="Views\Comment\CommentListByBlog.cshtml" />
+    <AdditionalFiles Include="Views\Comment\Index.cshtml" />
+    <AdditionalFiles Include="Views\Comment\PartialAddComment.cshtml" />
+    <AdditionalFiles Include="Views\Contact\Index.cshtml" />
+    <AdditionalFiles Include="Views\Dashboard\Index.cshtml" />
+    <AdditionalFiles Include="Views\ErrorPage\Error1.cshtml" />
+    <AdditionalFiles Include="Views\Login\Index.cshtml" />
+    <AdditionalFiles Include="Views\Message\Inbox.cshtml" />
+    <AdditionalFiles Include="Views\Message\ReadMessage.cshtml" />
+    <AdditionalFiles Include="Views\NewsLetter\SubscribeEmail.cshtml" />
+    <AdditionalFiles Include="Views\Notification\Index.cshtml" />
+    <AdditionalFiles Include="Views\Notification\NotificationList.cshtml" />
+    <AdditionalFiles Include="Views\Register\Index.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\BlogLast3\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\BlogListDashboard\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\CategoryListDashboard\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\CategoryList\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\CommentListByBlog\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\CommentList\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\WriterAboutDashboard\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\WriterLastBlog\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\WriterMessageNotification\Default.cshtml" />
+    <AdditionalFiles Include="Views\Shared\Components\WriterNotification\Default.cshtml" />
+    <AdditionalFiles Include="Views\Writer\AddWriter.cshtml" />
+    <AdditionalFiles Include="Views\Writer\Index.cshtml" />
+    <AdditionalFiles Include="Views\Writer\Test.cshtml" />
+    <AdditionalFiles Include="Views\Writer\WriterEditProfile.cshtml" />
+    <AdditionalFiles Include="Views\Writer\WriterFooter.cshtml" />
+    <AdditionalFiles Include="Views\Writer\WriterLayout.cshtml" />
+    <AdditionalFiles Include="Views\Writer\WriterNav.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Entity\Entity.csproj" />
+  </ItemGroup>
+
+</Project>

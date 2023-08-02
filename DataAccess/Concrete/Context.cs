@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete;
 
-public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string> 
+public class Context:IdentityDbContext<ApplicationUser>
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public Context(DbContextOptions<Context> options):base(options)
     {
-        optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Blog;Trusted_Connection=True;");
+        
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,11 +24,11 @@ public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string>
             .WithMany(x=>x.MessageReceiver)
             .HasForeignKey(x=>x.ReceiverId)
             .OnDelete(DeleteBehavior.ClientSetNull);
-     
+        
     }
     
     public DbSet<About> Abouts { get; set; }
-    public DbSet<Entity.Concrete.Blog> Blogs { get; set; }
+    public DbSet<Blog> Blogs { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Writer> Writers { get; set; }
     public DbSet<Contact> Contacts { get; set; }
@@ -38,7 +38,5 @@ public class Context:IdentityDbContext<ApplicationUser,ApplicationRole,string>
     public DbSet<Notification> Notifications { get; set; }
     public DbSet<Message> Messages { get; set; }
     public DbSet<Message2> Message2S { get; set; }
-
-    
     
 }

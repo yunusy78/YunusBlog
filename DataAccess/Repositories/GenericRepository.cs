@@ -6,7 +6,13 @@ namespace DataAccess.Repositories;
 
 public class GenericRepository<T> : IGenericDal<T> where T : class
 {
-    Context _context = new Context();
+    private Context _context;
+
+    public GenericRepository(Context context)
+    {
+        _context = context;
+    }
+
     public void Add(T entity)
     {
         _context.Add(entity);

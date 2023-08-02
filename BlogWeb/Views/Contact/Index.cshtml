@@ -1,0 +1,104 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_UserLayout";
+}
+
+	<link href="~/BlogTema/css/contact.css" rel='stylesheet' type='text/css' />
+
+<body>
+<section class="main-content-w3layouts-agileits">
+
+		<h3 class="tittle">Contact Us</h3>
+		<p class="sub text-center">We love to discuss your idea</p>
+		<div class="contact-map inner-sec">
+
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63395.1742585895!2d10.752245447534002!3d59.913934236724895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416d07005d8b5d%3A0x7b0cb12d38b7fe5!2sOslo%2C%20Norway!5e0!3m2!1sen!2sin!4v1631208902237" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+		<div class="ad-inf-sec bg-light">
+			<div class="container">
+				<div class="address row">
+
+					<div class="col-lg-4 address-grid">
+						<div class="row address-info">
+							<div class="col-md-4 address-left text-center">
+								<i class="far fa-map"></i>
+							</div>
+							<div class="col-md-8 address-right text-left">
+								<h6>Address</h6>
+								<p> Oslo, Norway
+
+								</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-lg-4 address-grid">
+						<div class="row address-info">
+							<div class="col-md-4 address-left text-center">
+								<i class="far fa-envelope"></i>
+							</div>
+							<div class="col-md-8 address-right text-left">
+								<h6>Email</h6>
+								<p>Email :
+									<a href="mailto:example@email.com"> yunusblog@example.com</a>
+
+								</p>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-lg-4 address-grid">
+						<div class="row address-info">
+							<div class="col-md-4 address-left text-center">
+								<i class="fas fa-mobile-alt"></i>
+							</div>
+							<div class="col-md-8 address-right text-left">
+								<h6>Phone</h6>
+								<p>+47 99999999</p>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="contact_grid_right">
+				<form action="#" method="post">
+					<div class="row contact_left_grid">
+						<div class="col-md-6 con-left">
+							<div class="form-group">
+								<label for="validationCustom01 my-2">Name</label>
+								<input class="form-control" type="text" name="UserName" placeholder="" required="">
+							</div>
+							<div class="form-group">
+								<label for="exampleFormControlInput1">Email</label>
+								<input class="form-control" type="email" name="Email" placeholder="" required="">
+							</div>
+							<div class="form-group">
+								<label for="validationCustom03 my-2">Subject</label>
+								<input class="form-control" type="text" name="Subject" placeholder="" required="">
+							</div>
+						</div>
+						<div class="col-md-6 con-right">
+							<div class="form-group">
+								<label for="textarea">Message</label>
+								<textarea id="textarea" name="Message" placeholder=""></textarea>
+							</div>
+							<input class="form-control" type="submit" value="Submit">
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!--//main-->
+	<!--footer-->
+	
+	<!---->
+	<!-- js -->
+</body>
