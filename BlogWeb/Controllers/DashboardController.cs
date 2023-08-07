@@ -28,8 +28,16 @@ public class DashboardController : Controller
         ViewBag.BlogCount = _db.Blogs.Count().ToString();
         var user =  _um.GetUserAsync(User).Result;
         var writer= _db.Writers.FirstOrDefault(x => x.ApplicationUserId == user.Id);
-        ViewBag.BlogWriterCount = _db.Blogs.Count(x => x.WriterId ==writer!.Id).ToString();
-        ViewBag.CategoryCount = _db.Categories.Count().ToString();
-        return View();
+        if (writer != null && writer.Status == true)
+        {
+            ViewBag.BlogWriterCount = _db.Blogs.Count(x => x.WriterId ==writer!.Id).ToString();
+            ViewBag.CategoryCount = _db.Categories.Count().ToString();
+            return View();
+        }
+        else
+        {
+            return Unauthorized();
+        }
+        
     }
 }

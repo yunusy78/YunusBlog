@@ -49,8 +49,17 @@ public class WriterController : Controller
     {
         var user = _um.GetUserAsync(User).Result;
         var writer = _db.Writers.FirstOrDefault(x => x.ApplicationUserId == user.Id);
-        var result = _writerManager.GetById(writer!.Id);
-        return View(result);
+        if (writer != null && writer.Status == true)
+        {
+            var result = _writerManager.GetById(writer!.Id);
+            return View(result);
+        }
+        else
+        {
+            return Unauthorized();
+        }
+        
+        
     }
     
     [HttpPost]
@@ -73,7 +82,7 @@ public class WriterController : Controller
             {
                 writer.ImageUrl = writer.ImageUrl;
             }
-            writer.Status = true;
+            writer.Status = writer.Status;
             writer.CreatedAt = DateTime.Now;
             _writerManager.Update(writer);
             return RedirectToAction("Index", "Dashboard");

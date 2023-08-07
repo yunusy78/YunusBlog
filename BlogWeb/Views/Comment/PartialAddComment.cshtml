@@ -1,12 +1,81 @@
-﻿<div class="comment-top">
-						<h4>Leave a Comment</h4>
-						<div class="comment-bottom">
-							<form action="/Comment/PartialAddComment" method="post">
-								<input class="form-control" type="text" name="UserName" placeholder="UserName" required="">
-								<input class="form-control" type="text" name="Title" placeholder="Email" required="">
-								<textarea class="form-control" name="Content" placeholder="Message..." required=""></textarea>
-								<button type="submit" class="btn btn-primary submit">Submit</button>
-							</form>
-						</div>
-					</div>
+﻿@model Entity.Concrete.Comment
+<br/>
+<br/>
 
+<h4>Leave a Comment</h4>
+<div class="comment-bottom">
+    @using (Html.BeginForm("PartialAddComment", "Comment", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.HiddenFor(model => model.BlogId) <!-- Hidden input field for BlogId -->
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", id = "txtUsername", placeholder = "Your username..." })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.Title, new { @class = "form-control", id = "txtTitle", placeholder = "Your title..." })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.TextAreaFor(model => model.Content, new { @class = "form-control", id = "txtContent", rows = "3", placeholder = "Your comment..." })
+            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group" id="rating">
+            <label for="ratingValue">Rate this blog:</label>
+            <br>
+            <input type="radio" name="BlogRating" value="1" id="rating1">
+            <label for="rating1">★</label>
+
+            <input type="radio" name="BlogRating" value="2" id="rating2">
+            <label for="rating2">★★</label>
+
+            <input type="radio" name="BlogRating" value="3" id="rating3">
+            <label for="rating3">★★★</label>
+
+            <input type="radio" name="BlogRating" value="4" id="rating4">
+            <label for="rating4">★★★★</label>
+
+            <input type="radio" name="BlogRating" value="5" id="rating5">
+            <label for="rating5">★★★★★</label>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    }
+</div>
+
+
+<!-- Your existing HTML code -->
+
+
+<!-- Add the CSS file for RateYo (you can use the CDN link instead) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" rel="stylesheet" />
+
+<!-- Add the jQuery library (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Add the RateYo JavaScript file (you can use the CDN link instead) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+<!-- Add the Font Awesome script (if not already included) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+<script>
+    /* JavaScript */
+
+    $(document).ready(function () {
+        $("#EnterRating").rateYo({
+            rating: 0,
+            numStars: 5,
+            maxValue: 5,
+            fullStar: true,
+            starWidth: "30px", // Adjust the width of the stars to fit your design
+            ratedFill: "#FFD700", // Set the color of the filled stars (yellow)
+            normalFill: "#A0A0A0", // Set the color of the empty stars (gray)
+            spacing: "5px", // Adjust the spacing between stars
+            onChange: function (rating, rateYoInstance) {
+                $("#ratingValue").val(rating); // Set the selected rating to the hidden input field
+            }
+        });
+    });
+</script>

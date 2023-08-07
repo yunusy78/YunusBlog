@@ -1,0 +1,91 @@
+﻿@model Entity.Concrete.Comment
+<br/>
+<br/>
+<style>
+    .voteBtn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    .voteBtn i {
+        color: gray;
+    }
+
+    .voteBtn.active i {
+        color: green;
+    }
+</style>
+
+<h4>Leave a Comment</h4>
+<div class="comment-bottom">
+    @using (Html.BeginForm("PartialAddComment", "Comment", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.HiddenFor(model => model.BlogId) <!-- Hidden input field for BlogId -->
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", id = "txtUsername", placeholder = "Your username..." })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.Title, new { @class = "form-control", id = "txtTitle", placeholder = "Your title..." })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.TextAreaFor(model => model.Content, new { @class = "form-control", id = "txtContent", rows = "3", placeholder = "Your comment..." })
+            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+        </div>
+
+        <div id="votingContainer">
+            <button id="thumbsUpBtn" class="voteBtn"><i class="fa fa-thumbs-up"></i></button>
+            <button id="thumbsDownBtn" class="voteBtn"><i class="fa fa-thumbs-down"></i></button>
+        </div>
+        <input type="hidden" name="VoteType" id="voteType" value="" />
+        
+        <div class="form-group">
+            <label for="ratingValue">Rate this blog:</label>
+            <br>
+            <input type="radio" name="RatingCompany" value="1" id="rating1">
+            <label for="rating1">1</label>
+    
+            <input type="radio" name="RatingCompany" value="2" id="rating2">
+            <label for="rating2">2</label>
+    
+            <input type="radio" name="RatingCompany" value="3" id="rating3">
+            <label for="rating3">3</label>
+    
+            <input type="radio" name="RatingCompany" value="4" id="rating4">
+            <label for="rating4">4</label>
+    
+            <input type="radio" name="RatingCompany" value="5" id="rating5">
+            <label for="rating5">5</label>
+        </div>                                                          
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    }
+</div>
+<!-- Add the jQuery library (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Initialize the voting system
+        $("#thumbsUpBtn").on("click", function () {
+            $("#thumbsUpBtn").addClass("active");
+            $("#thumbsDownBtn").removeClass("active");
+            $("#voteType").val("up");
+        });
+
+        $("#thumbsDownBtn").on("click", function () {
+            $("#thumbsDownBtn").addClass("active");
+            $("#thumbsUpBtn").removeClass("active");
+            $("#voteType").val("down");
+        });
+    });
+</script>
+
+
+
+
+

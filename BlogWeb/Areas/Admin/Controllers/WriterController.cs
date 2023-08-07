@@ -59,6 +59,7 @@ public class WriterController : Controller
     [HttpPost]
     public IActionResult AddWriter(Writer writer)
     {
+        writer.CreatedAt=DateTime.Now;
         _db.Writers.Add(writer);
         _db.SaveChanges();
         return Json(writer);
@@ -73,6 +74,7 @@ public class WriterController : Controller
         {
             writerToUpdate.Name = writer.Name;
             writerToUpdate.Email = writer.Email;
+            writerToUpdate.About = writer.About;
             writerToUpdate.Password = writer.Password;
             writerToUpdate.Status = writer.Status;
             writerToUpdate.ApplicationUserId = writer.ApplicationUserId;

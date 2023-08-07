@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Entity.Concrete.Blog>
+﻿@using Entity.Concrete
+@model IEnumerable<Entity.Concrete.Blog>
 
 @{
     ViewData["Title"] = "Details";
@@ -7,8 +8,10 @@
 
 <!DOCTYPE html>
 <html lang="zxx">
-
-
+<head>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="~/v2.3.2/jquery.rateyo.js"></script>
+</head>
 <body>
 
 	<section class="banner-bottom">
@@ -55,7 +58,7 @@
 					@*await Html.PartialAsync("~/Views/Comment/CommentListByBlog.cshtml")*@
 					@*await Component.InvokeAsync("CommentList")*@
 					@await Component.InvokeAsync("CommentListByBlog", new { id =ViewBag.id})
-					@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")
+					@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml", new Entity.Concrete.Comment { BlogId = ViewBag.id })
 				</div>
 
 				<!--//left-->
@@ -106,7 +109,9 @@
 										<a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
 									</h5>
 								</div>
-								<div class="clearfix"> </div>
+								<div class="clearfix">
+									
+								</div>
 							</div>
 						</div>
 					</div>

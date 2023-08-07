@@ -47,6 +47,7 @@ public class BlogController : Controller
     public IActionResult BlogListByWriter()
     {
         var user =  _um.GetUserAsync(User).Result;
+        //var values= await _um.FindByNameAsync(User.Identity!.Name);
         var writer = _db.Writers.FirstOrDefault(x => x.ApplicationUserId == user.Id);
         var result = _blogManager.GetBlogListWithCategory(writer!.Id);
         if(result.Count==0)
@@ -62,9 +63,13 @@ public class BlogController : Controller
     [Authorize(Roles = RoleService.Role_User_Writer)]
     public IActionResult AddToBlog()
     {
+        var user = _um.GetUserAsync(User).Result;
+        var writer = _db.Writers.FirstOrDefault(x => x.ApplicationUserId == user.Id);
         
-        var categories = _categoryManager.GetAll();
-        List<SelectListItem> valueStatus = (from x in categories
+        if (writer != null && writer.Status == true)
+        {
+         var categories = _categoryManager.GetAll();
+         List<SelectListItem> valueStatus = (from x in categories
             select new SelectListItem
             {
                 Text = x.Name,
@@ -73,7 +78,13 @@ public class BlogController : Controller
         ViewBag.Categories2 = valueStatus;
         
         return View();
+        }
+        else
+        {
+            return Unauthorized();
+        }
     }
+        
     
     
     [HttpPost]

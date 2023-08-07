@@ -32,3 +32,49 @@ td {
   object-fit: cover;
   border-radius: 50%;
 }
+
+
+
+.rating {
+  unicode-bidi: bidi-override;
+  color: #ccc;
+  font-size: 20px;
+  height: 30px;
+  width: 150px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.rating span.star {
+  padding: 0 5px;
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.rating span.star:before {
+  content: "\2605";
+  position: absolute;
+}
+
+.rating span.star.checked:before {
+  color: #ffcc00;
+}
+
+.rating span.star.checked ~ span.star:before {
+  color: #ccc;
+}
+
+.rating span.star.checked:last-child ~ span.star:before {
+  color: #ccc;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating span.star.checked ~ input.star:checked ~ span.star:before {
+  color: #ffcc00;
+}

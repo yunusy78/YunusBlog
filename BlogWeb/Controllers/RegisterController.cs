@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Business.Concrete;
+﻿using Business.Concrete;
 using Business.ValidationRules;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
@@ -51,7 +50,7 @@ public class RegisterController : Controller
                 writer.ImageUrl = "default.png";
             }
             writer.CreatedAt = DateTime.Now;
-            writer.Status = true;
+            writer.Status = false;
             var user = _um.GetUserAsync(User).Result;
             _um.AddToRoleAsync(user, "Writer").Wait();
             writer.ApplicationUserId = user.Id;

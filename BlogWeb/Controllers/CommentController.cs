@@ -23,6 +23,25 @@ public class CommentController : Controller
         return View();
     }
     
+    public IActionResult Add()
+    {
+        return View();
+
+    }
+    
+    [Authorize]
+    [HttpPost]
+    public IActionResult Add(Comment comment)
+    {
+     
+        comment.CreatedAt=DateTime.Parse(DateTime.Now.ToShortDateString());
+        comment.Status = true;
+        _commentManager.Add(comment);
+        return RedirectToAction("Index", "Blog");
+
+    }
+    
+    
     
     public PartialViewResult PartialAddComment()
     {
@@ -37,7 +56,6 @@ public class CommentController : Controller
      
         comment.CreatedAt=DateTime.Parse(DateTime.Now.ToShortDateString());
         comment.Status = true;
-        comment.BlogId = Guid.Parse("f3b340d4-8903-4523-8a4f-e661c5f02e3d");
         _commentManager.Add(comment);
         return RedirectToAction("Index", "Blog");
 
