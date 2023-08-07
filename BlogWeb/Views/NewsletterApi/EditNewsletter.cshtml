@@ -1,0 +1,26 @@
+﻿@model Entity.Concrete.Newsletter
+
+@{
+    ViewBag.Title = "Edit Newsletter";
+    Layout = "_Layout";
+}
+
+<div class="form-container">
+    <h2>Edit Newsletter</h2>
+    <form method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+        <label for="Email">Email:</label>
+        <input type="email" asp-for="Email" placeholder="Email" required="">
+    </div>
+    <div class="form-group">
+        <label for="createdAt">Created At:</label>
+        <input type="datetime-local" asp-for="CreatedAt" required="">
+    </div>
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <input type="text" asp-for="Status" placeholder="Status">
+ </div>
+        <input type="submit" value="Save Changes">
+    </form>
+</div>

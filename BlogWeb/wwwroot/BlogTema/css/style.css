@@ -1560,3 +1560,13 @@ a.facebook:hover {
 }
 
 /*--//responsive--*/
+
+
+/* styles.css (ya da istediğiniz başka bir isim) */
+
+.round-image {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	border-radius: 50%;
+}

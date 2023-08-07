@@ -1,0 +1,43 @@
+﻿@model Entity.Concrete.Category
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "_AdminLayout";
+}
+
+<h1>Update Category</h1>
+<div class="container">
+    <form asp-area="Admin" asp-controller="Category" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })  
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description)
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 5, required = "required" })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })  
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImageUrl">Choose an Image</label>
+            <div class="custom-file">
+                <input type="file" id="uploadBox" name="file" class="custom-file-input">
+                <label class="custom-file-label" for="uploadBox">Select Image</label>
+            </div>
+            @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+        </div>
+
+      <div class="form-group">
+          <label for="status">Status:</label>
+          <select id="status" name="Status" class="form-control">
+              <option value="true" @(Model.Status ? "selected" : "")>True</option>
+              <option value="false" @(!Model.Status ? "selected" : "")>False</option>
+          </select>
+      </div>
+        <button type="submit" class="btn btn-primary">Update Category</button>
+    </form>
+</div>

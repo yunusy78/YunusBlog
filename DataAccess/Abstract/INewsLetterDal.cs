@@ -5,4 +5,6 @@ namespace DataAccess.Abstract;
 public interface INewsLetterDal: IGenericDal<Newsletter>
 {
     
+    bool CheckIfEmailExists(string email);
+    
 }

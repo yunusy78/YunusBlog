@@ -42,7 +42,7 @@ namespace BlogWeb.Areas.Identity.Pages.Account
             _emailStore = GetEmailStore();
             _signInManager = signInManager;
             _logger = logger;
-            
+
         }
 
         /// <summary>
@@ -146,7 +146,6 @@ namespace BlogWeb.Areas.Identity.Pages.Account
                 user.City = Input.City;
                 user.Address = Input.Address;
                 user.District = Input.District;
-
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 
 

@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+    <title>Writer Ajax Actions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<body>
+    <div class="container">
+        <h2>Writer Ajax Actions</h2>
+        <br/>
+
+        <!-- Buttons for Writer Actions -->
+        <button type="button" id="btnGetList" class="btn btn-primary">Writers List</button>
+        <button type="button" id="btnGetById" class="btn btn-primary">Get Writer</button>
+        <button type="button" id="btnAddWriter" class="btn btn-primary">Add Writer</button>
+        <button type="button" id="btnUpdateWriter" class="btn btn-primary">Update Writer</button>
+        <button type="button" id="btnDeleteWriter" class="btn btn-primary">Delete Writer</button>
+        <br/><br/>
+
+        <!-- Divs to display the results of Writer Actions -->
+        <div id="writerList"></div>
+        <br/><br/>
+        <div id="writerById"></div>
+        <br/><br/>
+        <div id="addWriter"></div>
+        <br/><br/>
+
+        <!-- Form inputs for adding a new writer -->
+        <div class="form-group">
+            <input type="text" id="txtWriterName" placeholder="Name" class="form-control"/>
+            <input type="text" class="form-control" id="txtWriterEmail" placeholder="Email"/>
+            <input type="text" class="form-control" id="txtPassword" placeholder="Password"/>
+            <input type="text" id="txtStatus" placeholder="Status" class="form-control"/>
+            <input type="text" class="form-control" id="txtApplicationUserId" placeholder="ApplicationUserId"/>
+        </div>
+        <br/><br/>
+
+      <!-- Input for Get Writer by Id, Update, and Delete -->
+              <div>
+                  <input type="text" id="writerId" placeholder="WriterId Value" class="form-control" />
+              </div>
+        <br/><br/>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#btnGetList").click(function () {
+                $.ajax({
+                    dataType: "json",
+                    type: "GET",
+                    url: "/Admin/Writer/GetWriters/",
+                    success: function (data) {
+                        console.log(data);
+                        let tableHtml = "<table class='table table-striped table-bordered table-hover'> <tr> <th>WriterId</th><th>WriterName</th> <th>Writer Email</th></tr>";  
+                        $.each(data, function (key, item) {
+                            tableHtml += "<tr><td>" + item.id + "<tr><td>" + item.name + "</td><td>" + item.email + "</td></tr>";
+                        });
+                        tableHtml += "</table>";
+                        $("#writerList").html(tableHtml); 
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#btnGetById").click(function () {
+                let writerId = $("#writerId").val();
+                $.ajax({
+                    dataType: "json",
+                    type: "GET",
+                    url: "/Admin/Writer/GetWriterById/" + writerId,
+                    success: function (data) {
+                        console.log(data);
+                        let tableHtml = "<table class='table table-striped table-bordered table-hover'> <tr> <th>WriterId</th> <th>Writer Name</th> </tr>";
+                        tableHtml += "<tr><td>" + data.id + "</td><td>" + data.name + "</td></tr>";
+                        tableHtml += "</table>";
+                        $("#writerById").html(tableHtml);
+                    }
+                });
+            });
+        });
+        $(document).ready(function () {
+                    $("#btnAddWriter").click(function () {
+                       
+                        let writer = { Email: $("#txtWriterEmail").val(), 
+                        Name: $("#txtWriterName").val(), 
+                        ApplicationUserId: $("#txtApplicationUserId").val(), 
+                        Password: $("#txtPassword").val(), 
+                        Status: $("#txtStatus").val() };
+                        $.ajax({
+                            dataType: "json",
+                            type: "POST",
+                            url: "/Admin/Writer/AddWriter/",
+                            data: writer,
+                            success: function (data) {
+                                console.log(data);
+                                alert("New writer added successfully!");
+                               location.reload(); 
+                               
+                            },
+                            error: function (xhr, status, error) {
+                                       
+                                            console.error(error);
+                                           
+                                        }
+                        });
+                    });
+                });
+        
+                $(document).ready(function () {
+                            $("#btnUpdateWriter").click(function () {
+                                let writerId = $("#writerId").val();
+                                let writer = { Email: $("#txtWriterEmail").val(), 
+                                Name: $("#txtWriterName").val(), 
+                                ApplicationUserId: $("#txtApplicationUserId").val(), 
+                                Password: $("#txtPassword").val(), 
+                                Status: $("#txtStatus").val() };
+                                $.ajax({
+                                    dataType: "json",
+                                    type: "POST",
+                                    url: "/Admin/Writer/UpdateWriter/"+ encodeURIComponent(writerId),
+                                    data: writer,
+                                    success: function (data) {
+                                        console.log(data);
+                                      alert("Writer updated successfully!");
+                                       location.reload(); 
+                                       
+                                    },
+                                    error: function (xhr, status, error) {
+                                               
+                                                    console.error(error);
+                                                   
+                                                }
+                                });
+                            });
+                        });
+        
+                $(document).ready(function () {
+                    $("#btnDeleteWriter").click(function () {
+                        let writerId = $("#writerId").val();
+                        $.ajax({
+                            dataType: "json",
+                            type: "POST",
+                            url: "/Admin/Writer/DeleteWriter/" + writerId,
+                            success: function (data) {
+                                console.log(data);
+                                 alert("Writer deleted successfully!");
+                                location.reload(); 
+                                                                       
+                                 },
+                               error: function (xhr, status, error) {
+                                                                               
+                              console.error(error);
+                                                                                   
+                              }
+                          
+                        });
+                    });
+                });
+        
+        
+    </script>
+}
+
+
+</body>
+
+

@@ -42,6 +42,7 @@ public class GenericRepository<T> : IGenericDal<T> where T : class
     {
         return _context.Set<T>().Find(id);
     }
+    
 
     
 

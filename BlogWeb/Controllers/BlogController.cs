@@ -204,7 +204,6 @@ public class BlogController : Controller
             }
             
             blog.CreatedAt = DateTime.Now;
-            blog.CreatedAt = DateTime.Now;
             _blogManager.Update(blog);
             return RedirectToAction("BlogListByWriter", "Blog");
         }

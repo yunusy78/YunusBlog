@@ -1,0 +1,25 @@
+﻿@model System.Collections.Generic.List<Entity.Concrete.Newsletter>?
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_UserLayout";
+}
+
+    <div class="form-container">
+        <h2>Add New Newsletter</h2>
+        <form method="post">
+             <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="Email" id="email" name="Email" placeholder="Email" required="">
+              </div>
+             <div class="form-group">
+             <label for="createdAt">Created At:</label>
+            <input type="datetime-local" id="createdAt" name="CreatedAt" required="">
+            </div>
+             <div class="form-group">
+             <label for="status">Status:</label>
+            <input type="text" id="status" name="Status" placeholder="Status">
+           </div>
+            <input type="submit" value="Add Newsletter">
+        </form>
+    </div>

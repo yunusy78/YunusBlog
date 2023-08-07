@@ -1,7 +1,33 @@
 ﻿<div class="tech-btm">
     <p>Teknologi, Koding and other Blogs</p>
-    <form method="post" action="/NewsLetter/SubscribeEmail">
-        <input type="email" name="Email" placeholder="Email" required="">
-        <input type="submit" value="Subscribe">
+    <form id="subscriptionForm">
+        <input type="email" id="txtEmail" name="Email" placeholder="Email" required="">
+        <input type="submit" id="btnSubscribe" value="Subscribe"/>
     </form>
 </div>
+
+<!-- Path: BlogWeb\Views\NewsLetter\SubscribeEmail.cshtml -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $("#subscriptionForm").submit(function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        let subscriber = { Email: $("#txtEmail").val() };
+        
+        $.ajax({
+            type: "POST",
+            url: "/NewsLetter/SubscribeEmail/",
+            data: subscriber,
+            success: function (data) {
+                alert("Email subscribed to the newsletter.");
+                $("#txtEmail").val("");
+                
+            },
+            error: function () {
+                alert("Email already subscribed to the newsletter.");
+                $("#txtEmail").val("");
+                
+            }
+        });
+    });
+</script>

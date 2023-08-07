@@ -53,8 +53,10 @@ public class RegisterController : Controller
             writer.CreatedAt = DateTime.Now;
             writer.Status = true;
             var user = _um.GetUserAsync(User).Result;
+            _um.AddToRoleAsync(user, "Writer").Wait();
             writer.ApplicationUserId = user.Id;
             _writerManager.Add(writer);
+            _db.SaveChanges();
             return RedirectToAction("Index", "Dashboard");
         }
         else

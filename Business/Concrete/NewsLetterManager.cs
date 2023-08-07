@@ -42,4 +42,10 @@ public class NewsLetterManager : INewsLetterService
     {
         throw new NotImplementedException();
     }
+    
+    public bool CheckIfEmailExists(string email)
+    {
+        return _newsLetterDal.CheckIfEmailExists(email);
+    }
+    
 }
