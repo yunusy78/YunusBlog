@@ -610,12 +610,3 @@ C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debu
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\SixLabors.Fonts.dll
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\System.IO.Packaging.dll
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\XLParser.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.deps.json
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.runtimeconfig.json
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.exe
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\Microsoft.OpenApi.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.pdb

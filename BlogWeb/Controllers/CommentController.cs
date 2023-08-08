@@ -34,7 +34,7 @@ public class CommentController : Controller
     public IActionResult Add(Comment comment)
     {
      
-        comment.CreatedAt=DateTime.Parse(DateTime.Now.ToShortDateString());
+        comment.CreatedAt=DateTime.Now;
         comment.Status = true;
         _commentManager.Add(comment);
         return RedirectToAction("Index", "Blog");
@@ -54,7 +54,7 @@ public class CommentController : Controller
     public IActionResult PartialAddComment(Comment comment)
     {
      
-        comment.CreatedAt=DateTime.Parse(DateTime.Now.ToShortDateString());
+        comment.CreatedAt=DateTime.Now;
         comment.Status = true;
         _commentManager.Add(comment);
         return RedirectToAction("Index", "Blog");

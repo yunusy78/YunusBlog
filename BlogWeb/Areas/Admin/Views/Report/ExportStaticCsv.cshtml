@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<h1>Blog List Excel</h1>
+
+<button class="btn btn-primary" onclick="downloadExcel()">Download Excel</button>
+
+
+<script>
+    function downloadExcel() {
+        var confirmMessage = "Are you sure you want to download it?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Report/ExportStaticExcel";
+        }
+        return false;
+    }
+</script>
+
+
+<h1>Writer List Excel</h1>
+
+<button class="btn btn-primary" onclick="downloadExcel()">Download Excel</button>
+
+
+<script>
+    function downloadExcel() {
+        var confirmMessage = "Are you sure you want to download it?";
+        if (confirm(confirmMessage)) {
+            window.location.href = "/Admin/Report/ExportStaticExcelWriter";
+        }
+        return false;
+    }
+</script>

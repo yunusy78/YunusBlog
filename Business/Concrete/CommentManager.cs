@@ -37,11 +37,16 @@ public class CommentManager: ICommentService
     {
         return _commentDal.GetListAll(x=>x.BlogId==id);
     }
-    
+
+    public List<Comment> GetListWithBlog()
+    {
+        return _commentDal.GetListWithBlog();
+    }
+
 
     public Comment GetById(Guid id)
     {
-        throw new NotImplementedException();
+        return _commentDal.GetById(id);
     }
     
 }

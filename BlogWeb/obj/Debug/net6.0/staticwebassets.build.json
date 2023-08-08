@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "QMoMDcptTbznkm1qP8k8W7dRVpl+ezGMU9644pW2K1w=",
+  "Hash": "AszIDLgjXwO3wH6FYsit9qI+YoYybGNPaP4hWtfjHw0=",
   "Source": "BlogWeb",
   "BasePath": "_content/BlogWeb",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogApi\\BlogApi.csproj",
-      "Version": 2,
-      "Source": "BlogApi",
-      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
       "Name": "BlogWeb\\wwwroot",

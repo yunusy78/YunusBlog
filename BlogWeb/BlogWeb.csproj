@@ -27,6 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AdditionalFiles Include="Areas\Admin\Views\Admin\AdminNavBarPartial.cshtml" />
+    <AdditionalFiles Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <AdditionalFiles Include="Views\About\Index.cshtml" />
     <AdditionalFiles Include="Views\About\SosialMediaAbout.cshtml" />
     <AdditionalFiles Include="Views\Blog\AddToBlog.cshtml" />
@@ -68,7 +70,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlogApi\BlogApi.csproj" />
     <ProjectReference Include="..\Business\Business.csproj" />
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\Entity\Entity.csproj" />
@@ -77,6 +78,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data" />
     <Folder Include="Areas\Admin\Pages" />
+    <Folder Include="Data" />
     <Folder Include="Pages" />
   </ItemGroup>
 

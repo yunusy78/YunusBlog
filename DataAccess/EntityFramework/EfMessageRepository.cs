@@ -19,4 +19,9 @@ public class EfMessageRepository : GenericRepository<Message2>, IMessageDal
     {
         return _context.Message2S.Include(x => x.SenderWriter).Where(x=>x.ReceiverId==id).ToList();
     }
+    
+    public List<Message2> GetMessageListWithByWriterSendBox(Guid id)
+    {
+        return _context.Message2S.Include(x => x.ReceiverWriter).Where(x=>x.SenderId==id).ToList();
+    }
 }

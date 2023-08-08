@@ -23,4 +23,5 @@ public class Comment
     
     public Blog Blog { get; set; }
     
+    
 }

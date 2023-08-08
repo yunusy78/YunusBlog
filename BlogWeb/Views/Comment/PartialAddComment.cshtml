@@ -43,39 +43,3 @@
         <button type="submit" class="btn btn-success">Submit</button>
     }
 </div>
-
-
-<!-- Your existing HTML code -->
-
-
-<!-- Add the CSS file for RateYo (you can use the CDN link instead) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css" rel="stylesheet" />
-
-<!-- Add the jQuery library (if not already included) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Add the RateYo JavaScript file (you can use the CDN link instead) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-
-<!-- Add the Font Awesome script (if not already included) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-
-<script>
-    /* JavaScript */
-
-    $(document).ready(function () {
-        $("#EnterRating").rateYo({
-            rating: 0,
-            numStars: 5,
-            maxValue: 5,
-            fullStar: true,
-            starWidth: "30px", // Adjust the width of the stars to fit your design
-            ratedFill: "#FFD700", // Set the color of the filled stars (yellow)
-            normalFill: "#A0A0A0", // Set the color of the empty stars (gray)
-            spacing: "5px", // Adjust the spacing between stars
-            onChange: function (rating, rateYoInstance) {
-                $("#ratingValue").val(rating); // Set the selected rating to the hidden input field
-            }
-        });
-    });
-</script>

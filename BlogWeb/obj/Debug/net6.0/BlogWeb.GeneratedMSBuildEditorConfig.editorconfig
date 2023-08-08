@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Admin/AdminNavBarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQWRtaW5OYXZCYXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
@@ -243,8 +255,12 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV3JpdGVyXFdyaXRlck5hdi5jc2h0
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Blog/ExportStaticCsv.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xFeHBvcnRTdGF0aWNDc3YuY3NodG1s
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/ApplicationUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwbGljYXRpb25Vc2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Category/Add.cshtml]
@@ -263,6 +279,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hhcnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Comment/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tbWVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Comment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29tbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Message/ComposeMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVzc2FnZVxDb21wb3NlTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Message/Inbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVzc2FnZVxJbmJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Message/MessageBoxPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVzc2FnZVxNZXNzYWdlQm94UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Message/SendBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVzc2FnZVxTZW5kQm94LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Message/SendboxAndInboxPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVzc2FnZVxTZW5kYm94QW5kSW5ib3hQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Report/ExportStaticCsv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVwb3J0XEV4cG9ydFN0YXRpY0Nzdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Shared/Components/Statistic1/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3RhdGlzdGljMVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -273,6 +321,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Shared/Components/Statistic4/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3RhdGlzdGljNFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Areas/Admin/Views/Widget/Index.cshtml]
@@ -307,14 +359,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Admin/AdminNavBarPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5OYXZCYXJQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Comment/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -325,6 +369,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Message/SendBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxTZW5kQm94LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Message/SendMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxTZW5kTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/NewsletterApi/AddNewsletter.cshtml]
@@ -365,10 +417,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Shared/Partial3.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWwzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/yunus/Desktop/universietet/Internettjenester/YunusBlog/BlogWeb/Views/Shared/_LoginPartial.cshtml]

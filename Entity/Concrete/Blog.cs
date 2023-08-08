@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity.Concrete
 {
-    public class Blog
+    public class Blog : IEnumerable
     {
         public Guid Id { get; set; }
 
@@ -39,5 +40,9 @@ namespace Entity.Concrete
         public Writer Writer { get; set; }
 
         public List<Comment> Comments { get; set; }
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

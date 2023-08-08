@@ -1,0 +1,27 @@
+﻿@model Entity.Concrete.Message2
+
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "/Views/Writer/WriterLayout.cshtml";
+}
+
+<h1>Send Messages</h1>
+
+<form asp-controller="Message" asp-action="SendMessage" method="post">
+     <div class="form-group">
+         <input type="hidden" asp-for="SenderId" value="@ViewBag.WriterSender"/>
+         </div>
+    <div class="form-group">
+        <label for="ReceiverId">Select Recipient:</label>
+       @Html.DropDownListFor(x => x.ReceiverId, (List<SelectListItem>)ViewBag.WriterReceiver, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Content">Message Subject:</label>
+        <input class="form-control" name="Subject" id="Subject"></input>
+    </div>
+    <div class="form-group">
+        <label for="Content">Message Content:</label>
+        <textarea class="form-control" name="Content" id="Content" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>

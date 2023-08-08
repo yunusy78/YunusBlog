@@ -1,0 +1,49 @@
+﻿@model System.Collections.Generic.List<Entity.Concrete.Message2>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div class="wrapper wrapper-content">
+        <div class="row">
+            @await Html.PartialAsync("SendboxAndInboxPartial")
+            <div class="col-lg-9 animated fadeInRight">
+            @await Html.PartialAsync("MessageBoxPartial")
+            <h2>
+                             Sendbox (@Model.Count)
+                             </h2>
+                <div class="mail-box">
+
+                <table class="table table-hover table-mail">
+                    <tbody>
+                    @foreach(var item in Model)
+                    {
+                    <tr class="unread">
+                        <td class="check-mail">
+                            <input type="checkbox" class="i-checks">
+                        </td>
+                        <td class="mail-ontact"><a href="mail_detail.html">@item.ReceiverWriter.Name</a></td>
+                        <td class="mail-subject"><a href="mail_detail.html">@item.Subject</a></td>
+                        <td class="text-right mail-date">@item.Date.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+</body>
+
+</html>
+

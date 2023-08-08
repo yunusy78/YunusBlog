@@ -1,6 +1,4 @@
-﻿using System.Text;
-using Business.Concrete;
-using ClosedXML.Excel;
+﻿using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
@@ -19,36 +17,9 @@ public class BlogController : Controller
     }
     
     // GET
-    public IActionResult ExportStaticExcel()
+    public IActionResult Index()
     {
-        using (var workbook = new XLWorkbook())
-        {
-            var worksheet = workbook.Worksheets.Add("Blog List");
-            worksheet.Cell(1, 1).Value = "Blog Id";
-            worksheet.Cell(1, 2).Value = "Blog Title";
-
-            int blogRowCount = 2;
-            foreach (var blog in _blogManager.GetAll())
-            {
-                worksheet.Cell(blogRowCount, 1).Value = blog.Id.ToString(); // Convert Guid to string
-                worksheet.Cell(blogRowCount, 2).Value = blog.Title;
-                blogRowCount++;
-            }
-
-            using (var stream = new MemoryStream())
-            {
-                workbook.SaveAs(stream);
-                var content = stream.ToArray();
-
-                return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "BlogList.xlsx");
-            }
-        }
+        var result = _blogManager.GetListWithCategory();
+        return View(result);
     }
-    
-    public IActionResult ExportStaticCsv()
-    {
-        return View();
-    }
-
-
 }

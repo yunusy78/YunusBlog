@@ -20,10 +20,4 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Business\Business.csproj" />
-      <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-      <ProjectReference Include="..\Entity\Entity.csproj" />
-    </ItemGroup>
-
 </Project>

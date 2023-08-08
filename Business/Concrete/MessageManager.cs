@@ -42,4 +42,9 @@ public class MessageManager :IMessageService
     {
         return _messageDal.GetMessageListWithByWriter(id);
     }
+    
+    public List<Message2> GetSendBoxListByWriter(Guid id)
+    {
+        return _messageDal.GetMessageListWithByWriterSendBox(id);
+    }
 }
