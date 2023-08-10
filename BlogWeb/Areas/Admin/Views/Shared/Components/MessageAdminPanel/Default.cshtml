@@ -4,15 +4,15 @@
 
 
 <li class="dropdown">
-                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope"></i><span class="label label-warning">@Model.Count</span>
-                    </a>
+    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="/Admin/Message/Inbox">
+        <i class="fa fa-envelope"></i><span class="label label-warning">@Model.Count</span>
+        </a>
     <ul class="dropdown-menu dropdown-messages">
          @foreach (var item in Model)
          {
              <li>
                  <div class="dropdown-messages-box">
-                     <a class="dropdown-item float-left" href="#">
+                     <a class="dropdown-item float-left" href="/Admin/Message/Inbox">
                          <img alt="image" class="rounded-circle" src="@item.SenderWriter.ImageUrl">
                      </a>
                      <div class="media-body">

@@ -93,10 +93,5 @@ public class WriterController : Controller
     }
     
     
-    public IActionResult Success()
-    {
-        return View();
-    }
-    
     
 }
