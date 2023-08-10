@@ -4,20 +4,21 @@
     Layout = "_AdminLayout";
 }
 
-<title>Writer Ajax Actions</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <div class="container">
-    <h2>Writer Ajax Actions</h2>
+    <h2><strong>Writer List</strong></h2>
     <br/>
-
+    <div class="btn-group">
+            <button type="button" id="btnGetList" class="btn btn-primary"><i class="fa fa-list"></i> Writers List</button>
+            <button type="reset" id="btnReset" class="btn btn-secondary"><i class="fa fa-undo"></i> Reset Values</button>
+        </div>
     <!-- Divs to display the results of Writer Actions -->
     <div id="writerList"></div>
     <br/><br/>
     <div id="writerById"></div>
     <br/><br/>
     <!-- Form inputs for adding a new writer -->
-    <h4>Add Writer</h4>
+    <h2><strong>Add Writer</strong></h2>
     <form>
         <div class="form-group">
             <input type="text" id="txtWriterName" placeholder="Name" class="form-control"/>
@@ -27,14 +28,14 @@
             <input type="text" id="txtStatus" placeholder="Status" class="form-control"/>
             <input type="text" class="form-control" id="txtApplicationUserId" placeholder="ApplicationUserId"/>
         </div>
-        <button type="button" id="btnAddWriter" class="btn btn-success">Save Writer</button>
+        <button type="button" id="btnAddWriter" class="btn btn-primary"><i class="fa fa-save"></i> Save Writer</button>
     </form>
    
     <br/><br/>
 
     <!-- Form inputs for updating a writer -->
 
-    <h4> Get and Update Writer</h4>
+    <h2><strong>Get and Update Writer</strong> </h2>
     <form>
         <div class="form-group">
             <input type="hidden" id="txtWriterIdUpdate"/>
@@ -44,24 +45,22 @@
             <input type="text" id="txtStatusUpdate" placeholder="Status" class="form-control"/>
             <input type="text" class="form-control" id="txtApplicationUserIdUpdate" placeholder="ApplicationUserId"/>
         </div>
-        <button type="button" id="btnUpdate" class="btn btn-warning">Update Writer</button>
-        <button type="button" id="btnDeleteWriter" class="btn btn-danger">Delete Writer</button>
+        <button type="button" id="btnGetById" class="btn btn-info"><i class="fa fa-eye"></i> Get Writer</button>
+        <button type="button" id="btnUpdate" class="btn btn-warning"><i class="fa fa-edit"></i> Update Writer</button>
+        <button type="button" id="btnDeleteWriter" class="btn btn-danger"><i class="fa fa-trash"></i> Delete Writer</button>
+        <button type="reset" id="btnReset" class="btn btn-secondary"><i class="fa fa-undo"></i> Reset Values</button>
     </form>
     <br/><br/>
 
     <!-- Input for Get Writer by Id, Update, and Delete -->
-    <h5> Input WriterId for Get Writer by Id, Update, and Delete</h5>
+    <h3> Input WriterId for Get Writer by Id, Update, and Delete</h3>
     <div>
         <input type="text" id="writerId" placeholder="WriterId Value" class="form-control" />
     </div>
     <br/><br/>
 
     <!-- Buttons for Writer Actions -->
-    <div class="btn-group">
-        <button type="button" id="btnGetList" class="btn btn-primary">Writers List</button>
-        <button type="button" id="btnGetById" class="btn btn-info">Get Writer</button>
-        <button type="reset" id="btnReset" class="btn btn-secondary">Reset Values</button>
-    </div>
+    
 </div>
 <br/><br/>
 @section scripts{

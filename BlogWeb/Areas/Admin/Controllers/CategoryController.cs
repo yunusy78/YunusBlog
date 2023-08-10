@@ -4,6 +4,7 @@ using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
@@ -12,6 +13,7 @@ using X.PagedList.Mvc.Core;
 namespace BlogWeb.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class CategoryController : Controller
 {
     private readonly CategoryManager _categoryManager;

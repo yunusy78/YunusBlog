@@ -1,0 +1,78 @@
+﻿@model BlogWeb.Areas.Admin.Models.NotificationAdminTypeModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Role</title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h2 class="text-center">Add New Notification</h2>
+            <form asp-area="Admin" asp-controller="Notification" asp-action="Add" method="post">
+                
+                <div class="form-group">
+                    <label asp-for="Type">Select Type</label>
+                    <select asp-for="Type" class="form-control">
+                        <option value="">Select a type</option>
+                        @foreach (var type in Model.NotificationTypes)
+                        {
+                            <option value="@type.Value">@type.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Details:</label>
+                    <input type="text" id="title" name="Details" class="form-control" placeholder="Enter Details">
+                    <span asp-validation-for="Details" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Symbol">Select Symbol</label>
+                    <select asp-for="Symbol" class="form-control">
+                        <option value="">Select a Symbol</option>
+                        @foreach (var type in Model.NotificationSymbol)
+                        {
+                            <option value="@type.Value">@type.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Symbol" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Color">Select Color</label>
+                    <select asp-for="Color" class="form-control">
+                        <option value="">Select a Color</option>
+                        @foreach (var type in Model.ColorOptions)
+                        {
+                            <option value="@type.Value">@type.Text</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Color" class="text-danger"></span>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary"> <i class="fa fa-save"></i> Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

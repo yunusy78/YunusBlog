@@ -3,10 +3,12 @@ using Business.Concrete;
 using ClosedXML.Excel;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class ReportController : Controller
 {
     private readonly BlogManager _blogManager;

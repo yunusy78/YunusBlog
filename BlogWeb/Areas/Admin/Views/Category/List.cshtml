@@ -42,17 +42,17 @@
                 }
             </td>
             <td>
-            <button type="button" class="btn btn-primary" onclick="editCategory('@Model[i].CategoryId')">Edit</button>
+            <button type="button" class="btn btn-primary" onclick="editCategory('@Model[i].CategoryId')"> <i class="fa fa-edit"></i> Edit</button>
             </td>
            <td>
-               <button type="submit" class="btn btn-danger" onclick="return confirmDelete('@Model[i].CategoryId')">Delete</button>
+               <button type="submit" class="btn btn-danger" onclick="return confirmDelete('@Model[i].CategoryId')"><i class="fa fa-trash"></i> Delete</button>
                </td>
         </tr>
     }
     </tbody>
 </table>
 <a href="/Admin/Category/Add" class="btn btn-primary">
-    <i class="fas fa-plus"></i> Add New Category
+    <i class="fa fa-plus"></i> Add New Category
 </a>
 @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", "Category", new { area = "Admin", page }))
 <!-- Path: BlogWeb\Areas\Admin\Views\Category\Create.cshtml --> 

@@ -1,26 +1,13 @@
-﻿<nav class="navbar-default navbar-static-side" role="navigation">
+﻿
+<nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element">
-                        <img alt="image" class="rounded-circle" src="~/AdminTema/img/profile_small.jpg"/>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="block m-t-xs font-bold">Yunus Yigit</span>
-                            <span class="text-muted text-xs block">Developer <b class="caret"></b></span>
-                        </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a class="dropdown-item" href="~/AdminTema/profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="~/AdminTema/contacts.html">Contacts</a></li>
-                            <li><a class="dropdown-item" href="~/AdminTema/mailbox.html">Mailbox</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="~/AdminTema/login.html">Logout</a></li>
-                        </ul>
-                    </div>
-                    <div class="logo-element">
-                        IN+
-                    </div>
-                </li>
+                @await  Component.InvokeAsync("AdminProfile")
                 
+                <li>
+                    <a href="/Admin/ApplicationUser/EditProfile/"><i class="fa fa-edit"></i>
+<span class="nav-label">Edit Profile</span> </a>
+                </li>
                 <li>
                     <a href="/Admin/Widget/Index/"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
                 </li>
@@ -39,7 +26,7 @@
                 </li>
                 
                 <li>
-                    <a href="/Admin/Chart/Index"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
+                    <a href="/Admin/Role/Index"><i class="fa fa-pie-chart"></i> <span class="nav-label">Roles</span>  </a>
                 </li>
                 
                 <li>
@@ -67,7 +54,7 @@
                     </li>
                 
                 <li>
-                        <a href="widgets.html"><i class="fa fa-bell"></i> <span class="nav-label">Notifications</span></a>
+                        <a href="/Admin/Notification/Index"><i class="fa fa-bell"></i> <span class="nav-label">Notifications</span></a>
                     </li>
                 
                 <li>

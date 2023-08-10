@@ -1,10 +1,12 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class BlogController : Controller
 {
     private readonly BlogManager _blogManager;

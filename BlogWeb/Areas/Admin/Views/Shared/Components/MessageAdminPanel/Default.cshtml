@@ -1,0 +1,55 @@
+﻿@using Entity.Concrete
+@model List<Message2>
+
+
+
+<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i><span class="label label-warning">@Model.Count</span>
+                    </a>
+    <ul class="dropdown-menu dropdown-messages">
+         @foreach (var item in Model)
+         {
+             <li>
+                 <div class="dropdown-messages-box">
+                     <a class="dropdown-item float-left" href="#">
+                         <img alt="image" class="rounded-circle" src="@item.SenderWriter.ImageUrl">
+                     </a>
+                     <div class="media-body">
+                         @{
+                                       DateTime messageTime = @item.Date;
+                                       DateTime currentTime = DateTime.Now;
+                                       TimeSpan timeDifference = currentTime - messageTime;
+                                       int hoursAgo = (int)timeDifference.TotalHours;
+                                       int minutesAgo = (int)timeDifference.TotalMinutes % 60;
+                                    }
+                                    @if (hoursAgo > 0)
+                                    {
+                                        <small class="float-right">@hoursAgo @(hoursAgo == 1 ? "hour" : "hours") and @minutesAgo @(minutesAgo == 1 ? "minute" : "minutes") ago</small>
+                                    }
+                                    else
+                                    {
+                                        <small class="float-right">@minutesAgo @(minutesAgo == 1 ? "minute" : "minutes") ago</small>
+                                    }
+                         <br>
+                         <strong>@item.SenderWriter.Name</strong>
+                         <br>
+                         @item.Subject <br>
+                         <strong>@(item.Content.Length > 15 ? item.Content.Substring(0, 15) + "..." : item.Content)</strong>
+                          <br>
+                         <small class="text-muted">@item.Date</small>
+                     </div>
+                 </div>
+             </li>
+             <li class="dropdown-divider"></li>
+             <li>
+                 <div class="text-center link-block">
+                     <a href="/Admin/Message/ReadMessage/@item.Id" class="dropdown-item">
+                         <i class="fa fa-envelope"></i> <strong>Read Message</strong>
+                     </a>
+                 </div>
+             </li>
+         }
+        
+    </ul>
+                </li>

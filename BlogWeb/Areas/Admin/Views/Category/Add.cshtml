@@ -5,6 +5,7 @@
     Layout = "_AdminLayout";
 }
 
+
 <h1>Add New Category</h1>
 <div class="container">
     <form asp-area="Admin" asp-controller="Category" asp-action="Add" method="post" enctype="multipart/form-data">
@@ -29,6 +30,6 @@
             @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Category</button>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Add Category</button>
     </form>
 </div>

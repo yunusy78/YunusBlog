@@ -2,11 +2,13 @@
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class CommentController : Controller
 {
     private readonly UserManager<ApplicationUser> _userManager;

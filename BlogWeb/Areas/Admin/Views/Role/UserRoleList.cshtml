@@ -1,0 +1,43 @@
+﻿@model List<Entity.Concrete.ApplicationUser>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+    <div class="col-lg-12">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>User Role List</h5>
+                        </div>
+                        <div class="ibox-content">
+
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Assign Role</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach( var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.UserName</td>
+                                        <td><a href="/Admin/Role/UserRoleAssign/@item.Id" class="btn btn-outline-warning"> <i class="fa fa-save"></i> Assign Role</a></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/Role/Index" class="btn btn-outline-secondary"><i class="fa fa-arrow-left"></i> Back to Role List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>

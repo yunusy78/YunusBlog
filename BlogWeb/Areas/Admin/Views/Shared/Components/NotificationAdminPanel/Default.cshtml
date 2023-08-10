@@ -1,0 +1,40 @@
+﻿@using Entity.Concrete
+@model List<Notification>
+
+
+<li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="/Admin/Notification/Index">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">@Model.Count</span>
+                    </a>
+    <ul class="dropdown-menu dropdown-alerts">
+         @foreach (var item in Model)
+         {
+             <li>
+                 <a href="/Admin/Notification/Index" class="dropdown-item">
+                     <div>
+                         <i class="@item.Symbol" style="color:@item.Color"></i>@item.Type
+                         <h6 class="preview-subject font-weight-normal mb-1"></h6>
+                         <p class="text-gray ellipsis mb-0"> @item.Details </p>
+                               
+                         @{
+                                                                DateTime messageTime = @item.Date;
+                                                                DateTime currentTime = DateTime.Now;
+                                                                TimeSpan timeDifference = currentTime - messageTime;
+                                                                int hoursAgo = (int)timeDifference.TotalHours;
+                                                                int minutesAgo = (int)timeDifference.TotalMinutes % 60;
+                                                             }
+                                                             @if (hoursAgo > 0)
+                                                             {
+                                                                 <span class="float-right text-muted small">@hoursAgo @(hoursAgo == 1 ? "hour" : "hours") and @minutesAgo @(minutesAgo == 1 ? "minute" : "minutes") ago</span>
+                                                             }
+                                                             else
+                                                             {
+                                                                <span class="float-right">@minutesAgo @(minutesAgo == 1 ? "minute" : "minutes") ago</span>
+                                                             }
+                     </div>
+                 </a>
+             </li>
+             <li class="dropdown-divider"></li>
+         }                     
+                                    </ul>
+                </li>

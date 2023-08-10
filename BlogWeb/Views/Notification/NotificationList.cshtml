@@ -24,7 +24,7 @@
                 @foreach (var notification in Model)
                 {
                     <tr>
-                        <td><i class="@notification.Symbol @notification.Color"></i></td>
+                        <td><i class="@notification.Symbol" style="color: @notification.Color"></i></td>
                         <td>@notification.Details</td>
                         <td>@notification.Type</td>
                         @{

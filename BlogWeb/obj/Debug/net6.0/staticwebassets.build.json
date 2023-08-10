@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "AszIDLgjXwO3wH6FYsit9qI+YoYybGNPaP4hWtfjHw0=",
+  "Hash": "MPgR9wZwMGuseFrFVvH87uwUzDDImHPpWo+V/d06CLI=",
   "Source": "BlogWeb",
   "BasePath": "_content/BlogWeb",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogApi\\BlogApi.csproj",
+      "Version": 2,
+      "Source": "BlogApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "BlogWeb\\wwwroot",
@@ -32536,6 +32548,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ImageFile\\fdad8f75-0aa5-4497-be8c-fa51748f34c5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\ImageFile\\Profile\\321c11d8-d708-4541-aa19-740deea0d8cd.jpg",
+      "SourceId": "BlogWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\",
+      "BasePath": "_content/BlogWeb",
+      "RelativePath": "ImageFile/Profile/321c11d8-d708-4541-aa19-740deea0d8cd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImageFile\\Profile\\321c11d8-d708-4541-aa19-740deea0d8cd.jpg"
     },
     {
       "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\js\\site.js",

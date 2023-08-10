@@ -3,11 +3,14 @@ using Business.Concrete;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Controllers;
 [Area("Admin")]
+
+[Authorize (Roles = "Admin")]
 public class AdminController : Controller
 {
     private readonly UserManager<ApplicationUser> _um;

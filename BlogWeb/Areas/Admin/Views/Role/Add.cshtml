@@ -1,0 +1,48 @@
+﻿@model BlogWeb.Models.RoleViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "_AdminLayout";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Role</title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 custom-form">
+                <h1 class="text-center">Add New Role</h1>
+                <form asp-controller="Role" asp-action="Add" method="post">
+                    <div class="form-group">
+                        <label for="title">Name:</label>
+                        <input type="text" id="title" name="Name" class="form-control" placeholder="Enter role name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

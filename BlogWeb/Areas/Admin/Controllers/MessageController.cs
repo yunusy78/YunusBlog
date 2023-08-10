@@ -2,6 +2,7 @@
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
 using Entity.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace BlogWeb.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class MessageController : Controller
 {
     private readonly Context _db;

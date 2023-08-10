@@ -1,6 +1,7 @@
 ﻿using BlogWeb.Areas.Admin.Models;
 using DataAccess.Concrete;
 using DocumentFormat.OpenXml.Bibliography;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -8,6 +9,7 @@ using Writer = Entity.Concrete.Writer;
 
 namespace BlogWeb.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class WriterController : Controller
 {
     private readonly Context _db;

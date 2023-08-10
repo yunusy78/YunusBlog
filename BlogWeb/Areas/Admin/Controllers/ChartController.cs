@@ -1,9 +1,11 @@
 ﻿using BlogWeb.Areas.Admin.Models;
 using DataAccess.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize (Roles = "Admin")]
 public class ChartController : Controller
 {
     Context _db;

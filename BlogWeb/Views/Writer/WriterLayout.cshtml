@@ -9,16 +9,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Writer Dashboard</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/BlogTema/writerTemplate/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/BlogTema/writerTemplate/assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
     <link rel="stylesheet" href="~/BlogTema/writerTemplate/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="~/BlogTema/writerTemplate/assets/images/favicon.ico" />
@@ -28,7 +23,7 @@
       <!-- partial:../../partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="~/BlogTema/writerTemplate/index.html">
+          <a class="navbar-brand brand-logo" href="/Blog/Index">
             <img src="~/BlogTema/writerTemplate/assets/images/YunusBlogLogo.png" alt="logo" style="width: 140px; height: auto;" />
           </a>
         </div>
@@ -68,13 +63,8 @@
               @await Component.InvokeAsync("WriterNotification")
             </li>
             <li class="nav-item nav-logout d-none d-lg-block">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/Identity/Account/Logout">
                 <i class="mdi mdi-power"></i>
-              </a>
-            </li>
-            <li class="nav-item nav-settings d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-format-line-spacing"></i>
               </a>
             </li>
           </ul>

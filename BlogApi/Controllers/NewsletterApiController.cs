@@ -1,4 +1,4 @@
-﻿/*using Entity.Concrete;
+﻿using Entity.Concrete;
 using DataAccess.Concrete;
 
 
@@ -70,4 +70,4 @@ public NewsletterApi(Context db)
     }
     
    
-}*/
+}
