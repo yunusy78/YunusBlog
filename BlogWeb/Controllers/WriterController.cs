@@ -9,7 +9,6 @@ using DataAccess.Concrete;
 using Microsoft.AspNetCore.Identity;
 
 namespace BlogWeb.Controllers;
-[Authorize(Roles = RoleService.Role_User_Writer)]
 public class WriterController : Controller
 {
     private readonly WriterManager _writerManager;
@@ -27,11 +26,6 @@ public class WriterController : Controller
     public IActionResult Index()
     {
         
-        return View();
-    }
-    
-    public IActionResult Test()
-    {
         return View();
     }
     
@@ -98,48 +92,11 @@ public class WriterController : Controller
         return View();
     }
     
-   /* public IActionResult AddWriter()
+    
+    public IActionResult Success()
     {
         return View();
     }
-    
-    [HttpPost]  
-    public IActionResult AddWriter(Writer writer, IFormFile? file)
-    {
-        WriterValidator validator = new WriterValidator();
-        var result = validator.Validate(writer);
-        if (result.IsValid)
-        {
-            if (file != null)
-            {
-                var extension = Path.GetExtension(file.FileName);
-                var newImageName = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/" + newImageName);
-                var stream = new FileStream(location, FileMode.Create);
-                file.CopyToAsync(stream);
-                writer.ImageUrl =@"/ImageFile/"+newImageName;
-            }
-            else
-            {
-                writer.ImageUrl = "default.png";
-            }
-            writer.CreatedAt = DateTime.Now;
-            writer.Status = true;
-            writer.ApplicationUserId = "622b2920-18b8-473a-9526-65507c74becd";
-            _writerManager.Add(writer);
-            return RedirectToAction("Index", "Dashboard");
-        }
-        else
-        {
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-            }
-        }
-
-        return View();
-       
-    }*/
     
     
 }

@@ -1,7 +1,7 @@
 ﻿@model Entity.Concrete.Message2
 
 @{
-    ViewBag.Title = "Inbox";
+    ViewBag.Title = "ReadMessage";
     Layout = "/Views/Writer/WriterLayout.cshtml";
 }
 <div class="message-details">
@@ -29,8 +29,8 @@
             <input type="text" id="messageTimeAgo" class="form-control" value="@hoursAgo hours @minutesAgo minutes ago" readonly>
         </div>
         <div class="form-group">
-                    <a href="/Message/Inbox" class="btn btn-secondary">Go Back</a>
-                </div>
+            <a href="/Dashboard/Index" class="btn btn-secondary">Go Back Dashboard</a>
+            </div>
     </div>
 </div>
 

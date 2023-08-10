@@ -87,5 +87,14 @@ public class MessageController : Controller
         return View(result);
     }
     
+    public IActionResult DeleteMessage(Guid id)
+    {
+        var result = _messageManager.GetById(id);
+        //result.Status = false;
+        _messageManager.Delete(result);
+        return RedirectToAction("Inbox", "Message", new { area = "Admin" });
+    }
+    
+    
     
 }

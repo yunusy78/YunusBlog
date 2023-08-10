@@ -56,7 +56,7 @@ public class RegisterController : Controller
             writer.ApplicationUserId = user.Id;
             _writerManager.Add(writer);
             _db.SaveChanges();
-            return RedirectToAction("Index", "Dashboard");
+            return RedirectToAction("Success", "Writer");
         }
         else
         {

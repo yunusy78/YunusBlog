@@ -54,7 +54,8 @@
 						<textarea name="About" class="form-control" id="exampleInputCity1" placeholder="Write a brief description about yourself" rows="8"></textarea>
 						<span asp-validation-for="About" class="text-danger"></span>
 					</div>
-					<button type="submit" onclick="register()" class="btn btn-primary submit mb-4" disabled>Register</button>
+					<button type="submit" onclick="register()" class="btn btn-primary submit mb-4" disabled> <i class="mdi mdi-content-save"></i> Register</button>
+					<button class="btn btn-light"> <i class="mdi mdi-close"></i> Cancel</button>                                                                                                                           
 					<div>
 						<input type="checkbox" onclick="showTermsPopup()" id="btn1" required="">
 						<label for="agreeCheckbox">By clicking Signup, I agree to your terms</label>

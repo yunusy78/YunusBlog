@@ -46,10 +46,10 @@
             <td> @blog.CreatedAt.ToString("dd/MM/yyyy") </td>
             <td>
               <a href="/Blog/UpdateBlog/@blog.Id" class="btn btn-warning btn-sm">
-                <i class="fas fa-edit"></i> Edit
+                <i class="mdi mdi-pencil"></i> Edit
               </a>
               <a href="/Blog/DeleteBlog/@blog.Id" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">
-                <i class="fas fa-trash"></i> Delete
+                <i class="mdi mdi-delete"></i> Delete
               </a>
             </td>
           </tr>
@@ -60,5 +60,6 @@
   </div>
 </div>
 <a href="/Blog/AddToBlog" class="btn btn-primary">
-  <i class="fas fa-plus"></i> Add New Blog
+  <i class="mdi mdi-plus"></i> Add New Blog
 </a>
+<a asp-action="Index" asp-controller="Dashboard" class="btn btn-secondary"><i class="mdi mdi-close"></i> Cancel</a>

@@ -80,7 +80,7 @@ public IActionResult SendBox()
     {
         var user =  _um.GetUserAsync(User).Result;
         var writer= _db.Writers.FirstOrDefault(x => x.ApplicationUserId == user.Id);
-        var result = _messageManager.GetInboxListByWriter(writer!.Id);
+        var result = _messageManager.GetSendBoxListByWriter(writer!.Id);
         return View(result);
     }
 

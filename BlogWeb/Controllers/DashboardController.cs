@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Controllers;
 
-
 public class DashboardController : Controller
 {
     

@@ -30,9 +30,11 @@
                         <td class="check-mail">
                             <input type="checkbox" class="i-checks">
                         </td>
-                        <td class="mail-ontact"><a href="mail_detail.html">@item.ReceiverWriter.Name</a></td>
-                        <td class="mail-subject"><a href="mail_detail.html">@item.Subject</a></td>
-                        <td class="text-right mail-date">@item.Date.ToString("dd/MM/yyyy")</td>
+                        <td class="mail-ontact"><a href="/Admin/Message/ReadMessage/@item.Id">@item.ReceiverWriter.Name</a></td>
+                        <td class="mail-subject"><a href="/Admin/Message/ReadMessage/@item.Id">@item.Subject</a></td>
+                        <td class="text-right mail-date"><a href="/Admin/Message/ReadMessage/@item.Id">@item.Date.ToString("dd/MM/yyyy")</a></td>
+                        <td><a href="/Admin/Message/ReadMessage/@item.Id" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" ><i class="fa fa-eye"></i> </a></td>
+                        <td><a href="/Admin/Message/DeleteMessage/@item.Id" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash-o"></i> </a> </td>
                     </tr>
                     }
                     </tbody>
