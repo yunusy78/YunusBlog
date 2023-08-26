@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dI/KK1LqooSZTkS5RGAdPubBov9OAejXjVoUbHkDghoiwcNQ4g9RHjnTf2gk/yLmZPA8v9XFHpA8gUecDNLSAQ==",
+  "dgSpecHash": "k+EjArW0xoa1eQ//ATRfEbl7VygkPPZP9QGVzUnazs+6+Bn70jIGhZoS4oUErjIz0gTdSKFwnNdL9BqgymudSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\BlogWeb.csproj",
   "expectedPackageFiles": [
@@ -127,6 +127,7 @@
     "C:\\Users\\yunus\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\sixlabors.fonts\\1.0.0-beta19\\sixlabors.fonts.1.0.0-beta19.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\stripe.net\\42.2.0\\stripe.net.42.2.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

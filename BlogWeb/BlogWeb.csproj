@@ -24,6 +24,7 @@
     <PackageReference Include="Npgsql" Version="7.0.4" />
     <PackageReference Include="PagedList" Version="1.17.0" />
     <PackageReference Include="PagedList.Core" Version="1.17.4" />
+    <PackageReference Include="Stripe.net" Version="42.2.0" />
     <PackageReference Include="X.PagedList" Version="9.0.0-prerelease" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="9.0.0-prerelease" />
   </ItemGroup>
@@ -80,13 +81,14 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data" />
-    <Folder Include="Areas\Admin\Pages" />
+    <Folder Include="Areas\Admin\Pages\" />
     <Folder Include="Data" />
-    <Folder Include="Pages" />
+    <Folder Include="Pages\" />
     <Folder Include="wwwroot\ImageFile\Blog" />
     <Folder Include="wwwroot\ImageFile\Category" />
     <Folder Include="wwwroot\ImageFile\Profile" />
     <Folder Include="wwwroot\ImageFile\Users" />
+    <Folder Include="wwwroot\ImageFile\Writer" />
   </ItemGroup>
 
 </Project>

@@ -19,7 +19,13 @@ public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
     public List<Blog> GetListWithCategory()
     {
         
-        return _context.Blogs.Include(x => x.Category).ToList();
+        return _context.Blogs.Include(x => x.Category).Include(x=>x.Comments).ToList();
+    }
+    
+    public List<Blog> GetListWithCategoryAndComment(Guid id)
+    {
+        
+        return _context.Blogs.Where(x => x.Id == id).Include(x => x.Category).Include(x=>x.Comments).ToList();
     }
 
     public List<Blog> GetListByWriterId(Guid id)
@@ -27,4 +33,5 @@ public class EfBlogRepository : GenericRepository<Blog>, IBlogDal
         
         return _context.Blogs.Include(x => x.Category).Where(x => x.WriterId == id).ToList();
     }
+    
 }

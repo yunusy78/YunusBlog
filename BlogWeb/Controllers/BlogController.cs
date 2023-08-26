@@ -34,11 +34,15 @@ public class BlogController : Controller
         return View(result);
     }
     
+    
+    [Authorize(Roles = "Member, Writer, Admin")]
     public IActionResult Details(Guid id)
     {
         ViewBag.id = id;
         TempData["MyValue"] = id;
-        var result = _blogManager.GetBlogById(id);
+        var result = _blogManager.GetListWithCategoryAndComment(id);
+        var likesCount = _db.Comments.Count(x => x.BlogId == id && x.BlogRating>=3);
+        ViewBag.LikesCount = likesCount;
         return View(result);
     }
     
@@ -110,10 +114,10 @@ public class BlogController : Controller
             {
                 var extension = Path.GetExtension(file.FileName);
                 var newImageName = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/" + newImageName);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/Blog/" + newImageName);
                 var stream = new FileStream(location, FileMode.Create);
                 file.CopyToAsync(stream);
-                blog.ImageUrl =@"/ImageFile/"+ newImageName;
+                blog.ImageUrl =@"/ImageFile/Blog/"+ newImageName;
             }
             else
             {
@@ -140,6 +144,8 @@ public class BlogController : Controller
         
     }
     
+    
+    
     [Authorize(Roles = RoleService.Role_User_Writer)]
     public IActionResult DeleteBlog(Guid id)
     {
@@ -155,6 +161,10 @@ public class BlogController : Controller
         _blogManager.Delete(result);
         return RedirectToAction("BlogListByWriter", "Blog");
     }
+    
+    
+    
+    
     [Authorize(Roles = RoleService.Role_User_Writer)]
     public IActionResult UpdateBlog(Guid id)
     {
@@ -180,6 +190,7 @@ public class BlogController : Controller
         return View(result);
     }
     
+    [Authorize]
     [HttpPost]
     public IActionResult UpdateBlog(Blog blog , IFormFile? file)
     {
@@ -204,10 +215,10 @@ public class BlogController : Controller
             {
                 var extension = Path.GetExtension(file.FileName);
                 var newImageName = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/" + newImageName);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/Blog/" + newImageName);
                 var stream = new FileStream(location, FileMode.Create);
                 file.CopyToAsync(stream);
-                blog.ImageUrl =@"/ImageFile/"+ newImageName;
+                blog.ImageUrl =@"/ImageFile/Blog/"+ newImageName;
             }
             else
             {

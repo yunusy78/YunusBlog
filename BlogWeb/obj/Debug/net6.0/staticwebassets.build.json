@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jcmUm4awIxVFewmMkoLTAhU+6rpK17vguaDueVviIPA=",
+  "Hash": "FKMVJYllHKMJp9hxise0EhnzUBXQ4+big268Inj35iA=",
   "Source": "BlogWeb",
   "BasePath": "_content/BlogWeb",
   "Mode": "Default",
@@ -32363,6 +32363,23 @@
       "OriginalItemSpec": "wwwroot\\ImageFile\\856632be-9109-45cd-bc4e-65f862fae1d8.png"
     },
     {
+      "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\ImageFile\\8e920b03-bed3-4229-8b21-a566c36193a8.jpg",
+      "SourceId": "BlogWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\",
+      "BasePath": "_content/BlogWeb",
+      "RelativePath": "ImageFile/8e920b03-bed3-4229-8b21-a566c36193a8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImageFile\\8e920b03-bed3-4229-8b21-a566c36193a8.jpg"
+    },
+    {
       "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\ImageFile\\93b4ffae-6c5a-429e-805f-89049d74696a.png",
       "SourceId": "BlogWeb",
       "SourceType": "Discovered",
@@ -32463,6 +32480,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ImageFile\\b7ae8481-a132-47e0-9a76-71165ddec1bb.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\ImageFile\\Blog\\0a0121ff-7d7b-4609-88df-52d7f7426c92.jpg",
+      "SourceId": "BlogWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\",
+      "BasePath": "_content/BlogWeb",
+      "RelativePath": "ImageFile/Blog/0a0121ff-7d7b-4609-88df-52d7f7426c92.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImageFile\\Blog\\0a0121ff-7d7b-4609-88df-52d7f7426c92.jpg"
     },
     {
       "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\ImageFile\\c034c692-1944-4248-b3e5-e370db281991.jpg",
@@ -32684,6 +32718,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ImageFile\\Profile\\321c11d8-d708-4541-aa19-740deea0d8cd.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\ImageFile\\Profile\\8453bbc7-d59c-41dc-8c42-e874f6e49b03.jpg",
+      "SourceId": "BlogWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\",
+      "BasePath": "_content/BlogWeb",
+      "RelativePath": "ImageFile/Profile/8453bbc7-d59c-41dc-8c42-e874f6e49b03.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImageFile\\Profile\\8453bbc7-d59c-41dc-8c42-e874f6e49b03.jpg"
     },
     {
       "Identity": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\wwwroot\\js\\site.js",

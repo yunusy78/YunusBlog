@@ -38,14 +38,22 @@ public class RegisterController : Controller
         var result = validator.Validate(writer);
         if (result.IsValid)
         {
+            bool isDuplicate = _writerManager.CheckIfEmailExists(writer.Email);
+
+            if (isDuplicate)
+            {
+                // Return a response indicating that the email already exists
+                return RedirectToAction("ErrorPageDublicate", "ErrorPage");
+            }
+            
             if (file != null)
             {
                 var extension = Path.GetExtension(file.FileName);
                 var newImageName = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/" + newImageName);
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImageFile/Writer/" + newImageName);
                 var stream = new FileStream(location, FileMode.Create);
                 file.CopyToAsync(stream);
-                writer.ImageUrl =@"/ImageFile/"+newImageName;
+                writer.ImageUrl =@"/ImageFile/Writer/"+newImageName;
             }
             else
             {

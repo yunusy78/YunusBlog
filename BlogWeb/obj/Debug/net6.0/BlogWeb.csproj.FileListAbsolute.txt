@@ -619,3 +619,4 @@ C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debu
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.dll
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\BlogApi.pdb
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogWeb\bin\Debug\net6.0\Stripe.net.dll

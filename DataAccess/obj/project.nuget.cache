@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QdaNjEaBlKfNgJtT4DIb1S8D8f1v0tDV5hKbom2qwcESm4gFzqIWBHu8RR2bYFtgdhvpX2fxl8Tyf4f57l/QSw==",
+  "dgSpecHash": "Fj9RPE4bVfDxyhKkxqNMPeRl4MzkIhJtK32Tx5TZBZXmZ5cPH85ZI5SllGZbvOxdD0x/Z1MRmCzt6wTwUV9+Hw==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,7 @@
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.0-preview.6.23329.4\\microsoft.entityframeworkcore.design.8.0.0-preview.6.23329.4.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0-preview.6.23329.4\\microsoft.entityframeworkcore.relational.8.0.0-preview.6.23329.4.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.0-preview.6.23329.4\\microsoft.entityframeworkcore.sqlserver.8.0.0-preview.6.23329.4.nupkg.sha512",
-    "C:\\Users\\yunus\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.0-preview.6.23329.4\\microsoft.entityframeworkcore.tools.8.0.0-preview.6.23329.4.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.11\\microsoft.entityframeworkcore.tools.6.0.11.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0-preview.6.23329.7\\microsoft.extensions.caching.abstractions.8.0.0-preview.6.23329.7.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0-preview.6.23329.7\\microsoft.extensions.caching.memory.8.0.0-preview.6.23329.7.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0-preview.6.23329.7\\microsoft.extensions.configuration.abstractions.8.0.0-preview.6.23329.7.nupkg.sha512",

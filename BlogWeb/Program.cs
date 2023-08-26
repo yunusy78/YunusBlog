@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using DataAccess.Concrete;
 using Entity.Concrete;
+using Entity.Service;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,13 +19,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<Context>();
-
+builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = $"/Identity/Account/Login";
     options.LogoutPath = $"/Identity/Account/Logout";
-    options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+    options.AccessDeniedPath = $"/Membership/AccessDenied";
 });
 
 builder.Services.AddDistributedMemoryCache();
@@ -33,6 +35,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+builder.Services.Configure<StripeService>(builder.Configuration.GetSection("Stripe"));
+StripeConfiguration.ApiKey =builder.Configuration["Stripe:SecretKey"];
 /*builder.Services.AddMvc(config =>
 {
     var policy = new AuthorizationPolicyBuilder()

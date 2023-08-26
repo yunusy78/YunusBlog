@@ -18,8 +18,20 @@ public class CategoryList: ViewComponent
     
     public IViewComponentResult Invoke()
     {
+        var categoryList = _db.Categories.ToList();
+        var result = new List<object>();
+        foreach (var category in categoryList)
+        {
+            var blogCount = _db.Blogs.Count(x => x.CategoryId == category.CategoryId);
+            var item = new
+            {
+                Name = category.Name,
+                Count = blogCount
+            };
+            
+            result.Add(item);
+        }
         
-        var result = _categoryManager.GetAll();
         return View(result);
     }
     

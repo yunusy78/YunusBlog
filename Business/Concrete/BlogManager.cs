@@ -62,6 +62,11 @@ public class BlogManager: IBlogService
     {
         return _blogDal.GetListByWriterId(id);
     }
+    
+    public List<Blog> GetListWithCategoryAndComment(Guid id)
+    {
+        return _blogDal.GetListWithCategoryAndComment(id);
+    }
 
 
 }

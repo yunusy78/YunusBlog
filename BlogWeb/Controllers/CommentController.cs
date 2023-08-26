@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWeb.Controllers;
-
+[Authorize]
 public class CommentController : Controller
 {
     private readonly CommentManager _commentManager;
@@ -41,20 +41,19 @@ public class CommentController : Controller
 
     }
     
-    
-    
+    [Authorize]
     public PartialViewResult PartialAddComment()
     {
         return PartialView();
 
     }
     
+    
     [Authorize]
     [HttpPost]
     public IActionResult PartialAddComment(Comment comment)
     {
-     
-        comment.CreatedAt=DateTime.Now;
+        comment.CreatedAt = DateTime.Now;
         comment.Status = true;
         _commentManager.Add(comment);
         return RedirectToAction("Index", "Blog");

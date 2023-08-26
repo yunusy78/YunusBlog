@@ -10,4 +10,9 @@ public class ErrorPageController : Controller
         return View();
     }
     
+    public IActionResult ErrorPageDublicate()
+    {
+        return View();
+    }
+    
 }

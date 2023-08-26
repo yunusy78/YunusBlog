@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity.Concrete
 {
-    public class Blog : IEnumerable
+    public class Blog
     {
         public Guid Id { get; set; }
 
@@ -40,9 +40,6 @@ namespace Entity.Concrete
         public Writer Writer { get; set; }
 
         public List<Comment> Comments { get; set; }
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

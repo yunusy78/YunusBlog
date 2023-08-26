@@ -4,11 +4,11 @@
 
 <h4>Leave a Comment</h4>
 <div class="comment-bottom">
-    @using (Html.BeginForm("PartialAddComment", "Comment", FormMethod.Post))
+    @using (Html.BeginForm( "PartialAddComment", "Comment", FormMethod.Post, new { id = "frmAddComment" } ))
     {
         @Html.AntiForgeryToken()
         <div class="form-group">
-            @Html.HiddenFor(model => model.BlogId) <!-- Hidden input field for BlogId -->
+            @Html.HiddenFor(model => model.BlogId, new { @class = "form-control", id = "txtBlogId" }) <!-- Hidden input field for BlogId -->
             @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", id = "txtUsername", placeholder = "Your username..." })
             @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
         </div>
@@ -43,3 +43,40 @@
         <button type="submit" class="btn btn-success"><i class="mdi mdi-content-save"></i> Save</button>
     }
 </div>
+
+@* @section scripts{
+    <script>
+$(document).ready(function () {
+ $("#btnAddComment").click(function () {
+           
+            let comment = {
+                BlogId: $('#txtBlogId').val(),
+                UserName: $('#txtUsername').val(),           
+                Title: $('#txtTitle').val(),
+                Content: $('#txtContent').val(),
+                Rating: $('input[name="BlogRating"]:checked').val()
+              
+            };
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: '/Comment/PartialAddComment', 
+                data: comment,
+                success: function (data) {
+                    console.log(data);
+                    alert("New comment added successfully!");
+                    
+                                        $("#txtUsername").val('');
+                                        $("#txtWriterName").val('');
+                                        $("#txtTitle").val('');
+                                       
+                                    location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+    });
+});
+</script>
+}*@

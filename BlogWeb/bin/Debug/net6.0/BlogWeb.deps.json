@@ -24,6 +24,7 @@
           "Npgsql": "7.0.4",
           "PagedList": "1.17.0",
           "PagedList.Core": "1.17.4",
+          "Stripe.net": "42.2.0",
           "X.PagedList": "9.0.0-prerelease",
           "X.PagedList.Mvc.Core": "9.0.0-prerelease"
         },
@@ -1825,6 +1826,18 @@
           "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Stripe.net/42.2.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "System.Configuration.ConfigurationManager": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Stripe.net.dll": {
+            "assemblyVersion": "42.2.0.0",
+            "fileVersion": "42.2.0.0"
           }
         }
       },
@@ -3650,6 +3663,13 @@
       "sha512": "sha512-ECJoayRT54VkJNoKBwZZllGvBIvxmnUFXsUCqHU8uAjAFrcdtxNpQ5Auyzw3d4+B+Q3KivKIrd7uO0qiNx/glg==",
       "path": "sixlabors.fonts/1.0.0-beta19",
       "hashPath": "sixlabors.fonts.1.0.0-beta19.nupkg.sha512"
+    },
+    "Stripe.net/42.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a5tjPKPp7wnfbB7IEiw8oIAcf1Vkpq8z1GvC1wdLoiXZchOU25dLwVypUHgqNI4K7qpQqaudhMdZYfo973OHeg==",
+      "path": "stripe.net/42.2.0",
+      "hashPath": "stripe.net.42.2.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",

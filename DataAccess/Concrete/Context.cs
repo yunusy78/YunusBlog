@@ -39,4 +39,8 @@ public class Context:IdentityDbContext<ApplicationUser>
     public DbSet<Message> Messages { get; set; }
     public DbSet<Message2> Message2S { get; set; }
     
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<Membership> Memberships { get; set; }
+    
+    
 }

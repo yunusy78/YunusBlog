@@ -43,4 +43,9 @@ public class WriterManager: IWriterService
     {
         return _writerDal.GetListAll(x => x.Id == id);
     }
+    
+    public bool CheckIfEmailExists(string email)
+    {
+        return _writerDal.CheckIfEmailExists(email);
+    }
 }
