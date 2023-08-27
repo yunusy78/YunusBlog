@@ -26,8 +26,3 @@ C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\obj\Debug
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\obj\Debug\net6.0\Entity.pdb
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\obj\Debug\net6.0\Entity.genruntimeconfig.cache
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\obj\Debug\net6.0\ref\Entity.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\Entity\obj\Debug\net6.0\Entity.csproj.CopyComplete

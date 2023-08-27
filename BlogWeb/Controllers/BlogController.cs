@@ -28,9 +28,14 @@ public class BlogController : Controller
     
 
     // GET
-    public IActionResult Index()
+    public IActionResult Index(string Search)
     {
+        ViewData["currentFilter"] = Search;
         var result = _blogManager.GetListWithCategory();
+        if (!String.IsNullOrEmpty(Search))
+        {
+            result = result.Where(s => s.Title!.Contains(Search)).ToList();
+        }
         return View(result);
     }
     

@@ -1,8 +1,82 @@
-﻿@model Entity.Concrete.Order
+﻿@using Entity.Service
+@model Entity.Concrete.Order
 
 @{
     ViewBag.Title = "title";
     Layout = "_AdminLayout";
 }
 
-<h2>title</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <style>
+        .custom-form {
+        	border: 1px solid #ccc;
+        	padding: 20px;
+        	border-radius: 10px;
+        	margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 custom-form">
+            <h1 class="text-center">Update Order</h1>
+            <form asp-controller="Order" asp-action="Update" method="post" >
+                <input type="hidden" asp-for="Id" value="@Model.Id" />
+                <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+                <input type="hidden" asp-for="MembershipId" value="@Model.MembershipId" />
+                <input type="hidden" asp-for="SessionId" value="@Model.SessionId" />
+                <input type="hidden" asp-for="PaymentIntentId" value="@Model.PaymentIntentId" />
+                <input type="hidden" asp-for="Price" value="@Model.Price" />
+                <input type="hidden" asp-for="PaymentType" value="@Model.PaymentType" />
+                <div class="form-group">
+                    <label for="paymentStatus">Payment Status:</label>
+                    <select id="paymentStatus" asp-for="PaymentStatus" class="form-control">
+                       <option value="" selected>New</option>
+                        <option value="@StatusService.Approved">Approved</option>
+                        <option value="@StatusService.Pending">Pending</option>
+                        <option value="@StatusService.Completed">Completed</option>
+                        <option value="@StatusService.Cancelled">Cancelled</option>
+                        <option value="@StatusService.Refunded">Refunded</option>
+                        <option value="@StatusService.Rejected">Rejected</option>
+                        <option value="@StatusService.InProcess">InProcess</option>
+                    </select>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="orderStatus">Order Status:</label>
+                    <select id="orderStatus" asp-for="Status" class="form-control">
+                        <option value="" selected>New</option>
+                        <option value="@StatusService.Approved">Approved</option>
+                        <option value="@StatusService.Pending">Pending</option>
+                        <option value="@StatusService.Completed">Completed</option>
+                        <option value="@StatusService.Cancelled">Cancelled</option>
+                         <option value="@StatusService.Refunded">Refunded</option>
+                        <option value="@StatusService.Rejected">Rejected</option>
+                        <option value="@StatusService.InProcess">InProcess</option>
+                    </select>
+                </div>
+
+                <br/>
+                <div class="form-group">
+                    <label for="title">OrderDate:</label>
+                    <input type="text" id="title" asp-for="OrderDate" class="form-control" value="@Model.OrderDate" >
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label for="title">PaymentDate:</label>
+                    <input type="text" id="title" asp-for="PaymentDate" class="form-control" value="@Model.PaymentDate" >
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning"><i class="fa fa-edit"></i> Update Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_AdminLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Chart</title>
+    <!-- Google Charts kütüphanesi -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            $.ajax({
+                url: '/Admin/Chart/RevenueChart', // Controller adını doğru şekilde değiştirin
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var chartData = [['Months', 'Revenues']];
+                    for (var i = 0; i < data.months.length; i++) {
+                        chartData.push([data.months[i], data.revenues[i]]);
+                    }
+        
+                    var dataTable = google.visualization.arrayToDataTable(chartData);
+        
+                    var options = {
+                        title: 'Monthly Revenue',
+                        hAxis: { title: 'Months', titleTextStyle: { color: '#333' } },
+                        vAxis: { minValue: 0 }
+                    };
+        
+                    var chart = new google.visualization.ColumnChart(document.getElementById('revenueChart'));
+                    chart.draw(dataTable, options);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<!-- Grafik yerleştirme alanı -->
+<div id="revenueChart" style="width: 100%; height: 400px;"></div>
+</body>
+</html>

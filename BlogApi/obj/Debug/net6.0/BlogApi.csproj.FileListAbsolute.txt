@@ -94,3 +94,16 @@ C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debu
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\Business.pdb
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\DataAccess.pdb
 C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\Entity.pdb
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\MailKit.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\MimeKit.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\SendGrid.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\StarkbankEcdsa.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\yunus\Desktop\universietet\Internettjenester\YunusBlog\BlogApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

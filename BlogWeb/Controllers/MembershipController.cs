@@ -7,6 +7,7 @@ using Entity.Concrete;
 using Entity.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Stripe.Checkout;
@@ -21,9 +22,11 @@ public class MembershipController : Controller
     private readonly Context _context;
     private readonly MembershipManager _membershipManager;
     private readonly OrderManager _orderManager;
+    private readonly IEmailSender _emailSender;
     
     
-    public MembershipController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, Context context)
+    public MembershipController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
+        RoleManager<IdentityRole> roleManager, Context context, IEmailSender emailSender)
     {
         _userManager = userManager;
         _signInManager = signInManager;
@@ -31,6 +34,7 @@ public class MembershipController : Controller
         _context = context;
         _membershipManager = new MembershipManager(new EfMembershipRepository(_context));
         _orderManager = new OrderManager(new EfOrderRepository(_context));
+        _emailSender = emailSender;
     }
     
     // GET
@@ -155,6 +159,8 @@ public class MembershipController : Controller
                 if (session.PaymentStatus.ToLower() == "paid")
                 {
                     _orderManager.UpdateStripePaymentId(id, order.SessionId, session.PaymentIntentId);
+                    string emailContent = GenerateEmailContent(order);
+                    await _emailSender.SendEmailAsync(order.User.Email, "New Order - YunusBlog", emailContent);
                    
                 }
             }
@@ -167,6 +173,80 @@ public class MembershipController : Controller
         {
             return View();
         }
+        
+        
+         public string GenerateEmailContent(Order order)
+{
+    string emailContent = $@"
+<!DOCTYPE html>
+<html lang=""en"">
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <title>Order Confirmation - YunusBlog</title>
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }}
+        
+        .container {{
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }}
+        
+        h1 {{
+            margin-top: 0;
+        }}
+        
+        p {{
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }}
+        
+        .cta-button {{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }}
+        
+        .cta-button:hover {{
+            background-color: #0056b3; 
+        }}
+    </style>
+</head>
+<body>
+    <div class=""container"">
+        <h1>Order Confirmation - YunusBlog</h1>
+        <p>Dear {order.User!.FirstName} {order.User.LastName},</p>
+        <p>Your order with Order Number {order.Id} has been successfully placed. Thank you for choosing YunusBlog for your purchase.</p>
+        <p>Order Details:</p>
+        <ul>
+            <li>Order ID: {order.Id}</li>
+            <li>Customer: {order.User.FirstName} {order.User.LastName}</li>
+            <li>Total Amount: {order.Price}</li>
+            <!-- ... more order details ... -->
+        </ul>
+        <p>You can track the status of your order by logging into your account on our website.</p>
+        <p>If you have any questions or need assistance, please don't hesitate to contact our customer support team at [].</p>
+        <p>Thank you for shopping with us!</p>
+        <a class=""cta-button"" href=""[https://localhost:7030/Blog/Index/]"">Visit Our Website</a>
+    </div>
+</body>
+</html>";
+    return emailContent;
+}
+      
+
         
         
 }

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using DataAccess.Concrete;
 using Entity.Concrete;
 using Entity.Service;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
     .AddEntityFrameworkStores<Context>();
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IEmailSender, EmailService>();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = $"/Identity/Account/Login";

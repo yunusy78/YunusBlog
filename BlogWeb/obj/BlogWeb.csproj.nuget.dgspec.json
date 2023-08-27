@@ -161,6 +161,10 @@
               "target": "Package",
               "version": "[0.102.0, )"
             },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.11, )"
@@ -195,6 +199,10 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[7.0.4, )"
@@ -206,6 +214,10 @@
             "PagedList.Core": {
               "target": "Package",
               "version": "[1.17.4, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
             },
             "Stripe.net": {
               "target": "Package",
@@ -451,6 +463,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0-preview.6.23329.4, )"
@@ -466,6 +486,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0-preview.6.23329.4, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.28.1, )"
             }
           },
           "imports": [

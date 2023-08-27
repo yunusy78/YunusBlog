@@ -14,7 +14,25 @@
 </head>
 <body>
 <!-- Grafik için bir yer belirliyoruz -->
-<div id="chartDiv" style="width: 800px; height: 600px;"></div>
+
+    <div style="float: left; width: 50%; height: 600px;">
+        <div id="chartDiv" style="width: 100%; height: 100%;"></div>
+    </div>
+    <div style="float: left; width: 50%; height: 600px;">
+        <div id="chartDiv2" style="width: 100%; height: 100%;"></div>
+    </div>
+<div style="float: left; width: 50%; height: 600px;">
+    <div id="chartDiv3" style="width: 100%; height: 100%;"></div>
+</div>
+<div style="float: left; width: 50%; height: 600px;">
+    <div id="chartDiv4" style="width: 100%; height: 100%;"></div>
+</div>
+<div style="float: left; width: 100%; height: 600px;">
+    <div id="revenueChart" style="width: 100%; height: 100%;"></div>
+</div>
+    <div style="clear: both;"></div>
+
+
 
 <script type="text/javascript">
         // Sayfa yüklendiğinde grafik oluşturmak için bu fonksiyonu çağırıyoruz
@@ -39,7 +57,7 @@
             }
 
             var options = {
-                title: "Google Charts Projesi",
+                title: "Category Chart",
                 position: "top",
                 fontSize: "16px"
             };
@@ -50,6 +68,148 @@
         }
     });
 }
+
+
+google.charts.load('current', {'packages' : ['corechart'] });
+        google.charts.setOnLoadCallback(DrawPieChart2);
+
+        function DrawPieChart2(){
+           
+            $.ajax({
+                 type: "GET",
+                 url: "/Admin/Chart/OrderChart/",
+                 success: function(chartsdata) {
+                   var jsonData = chartsdata.jsonlist;
+                     console.log(jsonData);
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'name');
+            data.addColumn('number','count');
+
+           
+            for (var i = 0; i < jsonData.length; i++){
+                data.addRow([jsonData[i].name, jsonData[i].count]);
+            }
+
+            var options = {
+                title: "Membership Chart",
+                position: "top",
+                fontSize: "16px"
+            };
+
+            // Pasta grafik oluşturuyoruz
+            var chart = new google.visualization.PieChart(document.getElementById('chartDiv2'));
+            chart.draw(data, options);
+        }
+    });
+}
+
+
+google.charts.load('current', {'packages' : ['corechart'] });
+        google.charts.setOnLoadCallback(DrawPieChart3);
+
+        function DrawPieChart3(){
+            // AJAX ile verileri alıyoruz (örnek olarak bir dizi kullanıyoruz)
+            $.ajax({
+                 type: "GET",
+                 url: "/Admin/Chart/UserChart/",
+                 success: function(chartsdata) {
+                   var jsonData = chartsdata.jsonlist;
+                     console.log(jsonData);
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'name');
+            data.addColumn('number','count');
+
+           
+            for (var i = 0; i < jsonData.length; i++){
+                data.addRow([jsonData[i].name, jsonData[i].count]);
+            }
+
+            var options = {
+                title: "Writer Chart",
+                position: "top",
+                fontSize: "16px"
+            };
+
+            // Pasta grafik oluşturuyoruz
+            var chart = new google.visualization.PieChart(document.getElementById('chartDiv3'));
+            chart.draw(data, options);
+        }
+    });
+}
+
+google.charts.load('current', {'packages' : ['corechart'] });
+        google.charts.setOnLoadCallback(DrawPieChart4);
+
+        function DrawPieChart4(){
+            // AJAX ile verileri alıyoruz (örnek olarak bir dizi kullanıyoruz)
+            $.ajax({
+                 type: "GET",
+                 url: "/Admin/Chart/CommentChart/",
+                 success: function(chartsdata) {
+                   var jsonData = chartsdata.jsonlist;
+                     console.log(jsonData);
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'name');
+            data.addColumn('number','count');
+
+           
+            for (var i = 0; i < jsonData.length; i++){
+                data.addRow([jsonData[i].name, jsonData[i].count]);
+            }
+
+            var options = {
+                title: "Comment Rating Chart >=3",
+                position: "top",
+                fontSize: "16px"
+            };
+
+            // Pasta grafik oluşturuyoruz
+            var chart = new google.visualization.PieChart(document.getElementById('chartDiv4'));
+            chart.draw(data, options);
+        }
+    });
+}
+
+ google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            $.ajax({
+                url: '/Admin/Chart/RevenueChart', // Controller adını doğru şekilde değiştirin
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    var chartData = [['Months', 'Revenues' , { role: 'style' }]];
+                    for (var i = 0; i < data.months.length; i++) {
+                        var randomColor = getRandomColor(); 
+                         var monthIndex = data.months[i] - 1;
+                        chartData.push([months[monthIndex], data.revenues[i], randomColor]);
+                    }
+        
+                    var dataTable = google.visualization.arrayToDataTable(chartData);
+        
+                    var options = {
+                        title: 'Monthly Revenue',
+                        hAxis: { title: 'Months', titleTextStyle: { color: '#333' } },
+                        vAxis: { minValue: 0 }
+                    };
+        
+                    var chart = new google.visualization.ColumnChart(document.getElementById('revenueChart'));
+                    chart.draw(dataTable, options);
+                }
+            });
+        }
+    
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
     </script>
 </body>
 </html>

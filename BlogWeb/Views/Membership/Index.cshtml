@@ -61,16 +61,15 @@
 </style>
 </head>
 <body>
-
-<div class="container">
-    <h3>Membership Payment</h3>
-    <div class="price-info">
+    <div class="price-info" style="text-align: center">
+        <h3 style="color: #0c63e4">Membership Payment</h3>
         <ul>
-            <li>Monthly Subscription: 100 NOK</li>
-            <li>Yearly Subscription: 1000 NOK</li>
+            <p style="color: red">&bull; Monthly Subscription: 100 NOK</p>
+            <p style="color: red">&bull; Yearly Subscription: 1000 NOK</p>
         </ul>
     </div>
-   <br/>
+    <br/>
+    <div class="container">
    <form asp-action="CheckoutPOST" asp-controller="Membership" method="post">
        <div>
            <label for="FirstName">FirstName</label>
@@ -94,9 +93,8 @@
            <input type="text" asp-for="PhoneNumber" value="@ViewBag.User.PhoneNumber" required>
        </div>
        <br/>
-       <button type="submit" class="btn btn-outline-primary" > <i class="fa fa-credit-card"> Pay With Card</i> </button>
+       <button type="submit" class="btn btn-primary" > <i class="fa fa-credit-card">  Pay With Card</i> </button>
    </form>
-   
-</div>
+   </div>
 </body>
 </html>
