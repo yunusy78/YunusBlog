@@ -215,6 +215,10 @@
               "target": "Package",
               "version": "[1.17.4, )"
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
             "SendGrid": {
               "target": "Package",
               "version": "[9.28.1, )"

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1tTinExqvQYu2jtl7HFHLOnOqPzrKd9zgMAxr4aSIrwPTLfq9h1jfoSNZxSXasTu+GH8vg6NGFMumMVQ88nZ9A==",
+  "dgSpecHash": "oE6BazBxa4YE38kK0x5pS1C+FRXNSkTA/Rp4McFQsMT860N0dl/+m2Rb3+I7RJTyg0p03z+1f9Zf04fni0Cq9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\Desktop\\universietet\\Internettjenester\\YunusBlog\\BlogWeb\\BlogWeb.csproj",
   "expectedPackageFiles": [
@@ -113,6 +113,7 @@
     "C:\\Users\\yunus\\.nuget\\packages\\nuget.versioning\\6.2.1\\nuget.versioning.6.2.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\pagedlist\\1.17.0\\pagedlist.1.17.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\pagedlist.core\\1.17.4\\pagedlist.core.1.17.4.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
