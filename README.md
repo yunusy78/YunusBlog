@@ -15,9 +15,14 @@ This project utilizes the following technologies:
 
 ## Features
 
+## Features
+
 - **User Authentication:** Users can create accounts, log in, and manage their profiles.
-- **Blog Articles:** Users can add, edit, and delete blog articles.
+- **Blog Articles:** Writers can add, edit, and delete blog articles.
 - **Comment System:** An interactive comment system is implemented for user engagement and feedback.
+- **Admin Dashboard:** Administrators have access to a dedicated dashboard for managing user accounts, articles, and website settings.
+- **Writer Dashboard:** Writers have access to a dashboard where they can create, edit, and publish articles.
+- **Subscription-Based Access:** Blog article details are accessible to users with active monthly or annual subscriptions. Non-subscribers can view article previews but require a subscription for full access.
 - **Google Charts:** Google Charts is used for visualizing sales statistics.
 - **Stripe Integration:** Secure payment processing is integrated using Stripe.
 - **Data Protection:** Measures for data protection have been implemented.
