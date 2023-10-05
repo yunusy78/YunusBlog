@@ -5,6 +5,7 @@ using DataAccess.EntityFramework;
 using Entity.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,13 +18,15 @@ public class BlogController : Controller
     private readonly CategoryManager _categoryManager;
     private readonly Context _db;
     private readonly UserManager<ApplicationUser> _um;
+    private readonly IDataProtector _dataProtector;
 
-    public BlogController(Context db, UserManager<ApplicationUser> um)
+    public BlogController(Context db, UserManager<ApplicationUser> um, IDataProtectionProvider dataProtector)
     {
         _db = db;
         _um = um;
         _blogManager = new BlogManager(new EfBlogRepository(_db));
         _categoryManager = new CategoryManager(new EfCategoryRepository(_db));
+        _dataProtector = dataProtector.CreateProtector("BlogController");
     }
     
 
@@ -32,6 +35,8 @@ public class BlogController : Controller
     {
         ViewData["currentFilter"] = Search;
         var result = _blogManager.GetListWithCategory();
+        result.ForEach(x=>x.EncryptedId = _dataProtector.Protect(x.Id.ToString())
+            );
         if (!String.IsNullOrEmpty(Search))
         {
             result = result.Where(s => s.Title!.Contains(Search)).ToList();
@@ -41,12 +46,14 @@ public class BlogController : Controller
     
     
     [Authorize(Roles = "Member, Writer, Admin")]
-    public IActionResult Details(Guid id)
+    public IActionResult Details(string id)
     {
-        ViewBag.id = id;
-        TempData["MyValue"] = id;
-        var result = _blogManager.GetListWithCategoryAndComment(id);
-        var likesCount = _db.Comments.Count(x => x.BlogId == id && x.BlogRating>=3);
+        
+        Guid decryptedId = Guid.Parse(_dataProtector.Unprotect(id));
+        ViewBag.id = decryptedId;
+        TempData["MyValue"] = decryptedId;
+        var result = _blogManager.GetListWithCategoryAndComment(decryptedId);
+        var likesCount = _db.Comments.Count(x => x.BlogId == decryptedId && x.BlogRating>=3);
         ViewBag.LikesCount = likesCount;
         return View(result);
     }

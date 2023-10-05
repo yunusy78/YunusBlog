@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity.Concrete
 {
-    public class Blog
+    public partial class Blog
     {
         public Guid Id { get; set; }
 
@@ -25,7 +25,7 @@ namespace Entity.Concrete
 
         [Required(ErrorMessage = "ImageUrl is required.")]
         public string ImageUrl { get; set; } = string.Empty;
-
+        
         
         public string ThumbnailImageUrl { get; set; } = string.Empty;
 

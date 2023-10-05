@@ -1,3 +1,5 @@
+using System.Configuration;
+using BlogWeb.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -37,7 +39,8 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
+builder.Services.AddDataProtection();
+builder.Services.Configure<IpList>(builder.Configuration.GetSection("IPList"));
 builder.Services.Configure<StripeService>(builder.Configuration.GetSection("Stripe"));
 StripeConfiguration.ApiKey =builder.Configuration["Stripe:SecretKey"];
 /*builder.Services.AddMvc(config =>
@@ -85,6 +88,7 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<IpSafeMiddleWare>();
 
 app.UseEndpoints(endpoints =>
 {
