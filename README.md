@@ -13,7 +13,6 @@ This project utilizes the following technologies:
 - ASP.NET Core MVC: It is used to create the web-based blogging platform.
 - SQL Server: The application uses SQL Server as its database system.
 
-## Features
 
 ## Features
 
