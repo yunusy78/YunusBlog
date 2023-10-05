@@ -55,7 +55,7 @@ To become a writer on this platform, follow these steps:
    - Administrators will assess your application based on criteria such as writing skills, experience, and suitability.
 4. **Writer Role Assignment:** If your application is approved, you will be assigned the writer role.
    - As a writer, you will gain access to the Writer Dashboard, where you can create, edit, and publish articles.
-   - 
+
 This multi-step process ensures that users interested in becoming writers go through an application and review process before gaining access to the writer role.
 
 - Registration: Users can create accounts and manage their profiles.
