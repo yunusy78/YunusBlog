@@ -59,19 +59,19 @@ This project is licensed under the [License Type] license. See the License File 
 
 ## Image
 
-![Proje Görseli](WEB/wwwroot/BlogImage/1.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_1.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/2.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_2.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/3.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_3.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/4.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_4.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/5.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_5.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/6.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_6.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/7.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_7.png)
 
-![Proje Görseli](WEB/wwwroot/BlogImage/8.png)
+![Proje Görseli](WEB/wwwroot/BlogImage/Blog_8.png)
 
